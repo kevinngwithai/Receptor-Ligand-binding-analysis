@@ -1,0 +1,378 @@
+/* harmony export */   Matrix3: () => (/* reexport safe */ _WebGL_math__WEBPACK_IMPORTED_MODULE_16__.Matrix3),
+/* harmony export */   Matrix4: () => (/* reexport safe */ _WebGL_math__WEBPACK_IMPORTED_MODULE_16__.Matrix4),
+/* harmony export */   conversionMatrix3: () => (/* reexport safe */ _WebGL_math__WEBPACK_IMPORTED_MODULE_16__.conversionMatrix3),
+    // Rotation matrix around z and x axis -
+    function getRotationMatrix(dx, dy, dz) {
+        var e = getRotationMatrix(to.x - from.x, to.y - from.y, to.z - from.z);
+        // TODO: Will have orient with model view matrix according to direction
+        var e = getRotationMatrix(ndir.x, ndir.y, ndir.z);
+        this.idMatrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_2__.Matrix4();
+                transformedRet.matrix.copy(this.modelData.symmetries[t]);
+                transformedRet.matrixAutoUpdate = false;
+            // add the matrix if it is missing
+            if (!this.modelData.cryst.matrix) {
+                this.modelData.cryst.matrix = (0,_WebGL_math__WEBPACK_IMPORTED_MODULE_2__.conversionMatrix3)(cryst.a, cryst.b, cryst.c, cryst.alpha, cryst.beta, cryst.gamma);
+        const matrix = (0,_WebGL_math__WEBPACK_IMPORTED_MODULE_2__.conversionMatrix3)(a, b, c, alpha, beta, gamma);
+            'matrix': matrix
+     * Set the crystallographic matrix to the given matrix.
+     * @param {Matrix3} matrix - unit cell matrix
+    setCrystMatrix(matrix) {
+        matrix = matrix || new _WebGL_math__WEBPACK_IMPORTED_MODULE_2__.Matrix3(1, 0, 0, 0, 1, 0, 0, 0, 1);
+            'matrix': matrix
+     * Otherwise returns a list of just the ID matrix
+     * @return {Array<Matrix4>}
+            this.modelData.symmetries = [this.idMatrix];
+     * @param {Array<Matrix4>} list
+            this.modelData.symmetries = [this.idMatrix];
+            matrix: data.matrix,
+     * Otherwise returns a list of just the ID matrix
+     * @return {Array<Matrix4>}
+            this.setSymmetries([new _WebGL_math__WEBPACK_IMPORTED_MODULE_9__.Matrix4()]);
+     * @param {Array<Matrix4>} list
+            syms = [new _WebGL_math__WEBPACK_IMPORTED_MODULE_9__.Matrix4()];
+        this.camera.updateProjectionMatrix();
+            t.applyMatrix4(this.modelGroup.matrixWorld);
+        mvec.applyMatrix4(this.modelGroup.matrixWorld);
+        this.camera.updateProjectionMatrix();
+                                tmesh.matrix = surfArr[n].symmetries[j];
+                                tmesh.matrixAutoUpdate = false;
+        var matrix = null;
+            if (data.matrix) {
+                matrix = data.matrix;
+                matrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_9__.Matrix3(a, b * Math.cos(gamma), c * u, 0, b * Math.sin(gamma), c * v, 0, 0, c * w);
+            // console.log('Matrix4', data.matrix4, data.matrix);
+            if (data.matrix4) {
+                        points[i].multiplyVectors(points[i], data.size); //matrix is for unit vectors, not whole box
+                    points[i] = points[i].applyMatrix4(data.matrix4);
+                    points[i] = points[i].applyMatrix3(matrix);
+            const matrix = cryst.matrix;
+                const invmatrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_9__.Matrix3().getInverse3(matrix);
+                    let pos = new _WebGL_math__WEBPACK_IMPORTED_MODULE_9__.Vector3(x, y, z).applyMatrix3(invmatrix);
+                        offset.applyMatrix3(matrix);
+                symmetries: [new _WebGL_math__WEBPACK_IMPORTED_MODULE_9__.Matrix4()]
+     * Synchronize this view matrix of this viewer to the passed viewer.
+        let transform = spec.matrix; //if this is set, it overrides origin and unitCube
+                vpt = vpt.applyMatrix4(transform);
+        this.matrix = null; //if set must transform data
+        this.inversematrix = null;
+                //need a transformation matrix
+                this.matrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_1__.Matrix4(xVec.x, yVec.x, zVec.x, 0, xVec.y, yVec.y, zVec.y, 0, xVec.z, yVec.z, zVec.z, 0, 0, 0, 0, 1);
+                //include translation in matrix
+                this.matrix = this.matrix.multiplyMatrices(this.matrix, new _WebGL_math__WEBPACK_IMPORTED_MODULE_1__.Matrix4().makeTranslation(origin.x, origin.y, origin.z));
+                //all translation and scaling done by matrix, so reset origin and unit
+                        console.warn("Non-orthogonal delta matrix not currently supported in dx format");
+                        console.error("Parse error in dx delta matrix");
+                        console.warn("Non-orthogonal delta matrix not currently supported in dx format");
+                        console.error("Parse error in dx delta matrix");
+                        console.warn("Non-orthogonal delta matrix not currently supported in dx format");
+        if (this.matrix) {
+            //all transformation is done through matrix multiply
+            if (this.inversematrix == null) {
+                this.inversematrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_1__.Matrix4().getInverse(this.matrix);
+            pt = pt.applyMatrix4(this.inversematrix);
+        this.matrix = cryst.matrix4;
+        // 26-34  SKWMAT  Skew matrix S (in order S11, S12, S13, S21 etc) if
+        //create transformation matrix, code mostly copied from ngl
+        this.matrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_1__.Matrix4();
+        this.matrix.set(basis[mapcrs[1]][0] / nxyz[mapcrs[1]], basis[mapcrs[2]][0] / nxyz[mapcrs[2]], basis[mapcrs[3]][0] / nxyz[mapcrs[3]], 0, basis[mapcrs[1]][1] / nxyz[mapcrs[1]], basis[mapcrs[2]][1] / nxyz[mapcrs[2]], basis[mapcrs[3]][1] / nxyz[mapcrs[3]], 0, basis[mapcrs[1]][2] / nxyz[mapcrs[1]], basis[mapcrs[2]][2] / nxyz[mapcrs[2]], basis[mapcrs[3]][2] / nxyz[mapcrs[3]], 0, 0, 0, 0, 1);
+        //include translation in matrix, NXSTART etc are an offset in grid space
+        this.matrix = this.matrix.multiplyMatrices(this.matrix, new _WebGL_math__WEBPACK_IMPORTED_MODULE_1__.Matrix4().makeTranslation(h.NXSTART + h.originX, h.NYSTART + h.originY, h.NZSTART + h.originZ));
+        //all translation and scaling done by matrix, so reset origin and unit
+        //need to create transformation matrix that maps model points into
+        // texmatrix (conversion from model to texture coords), minunit,
+        // possibly non-orthnormal basis if matrix
+        if (data.matrix) {
+            start.applyMatrix4(data.matrix);
+            end.applyMatrix4(data.matrix);
+            unit.applyMatrix4(data.matrix).sub(start);
+                end.applyMatrix4(data.matrix);
+            this.texmatrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_1__.Matrix4().identity().scale({ x: data.size.x, y: data.size.y, z: data.size.z });
+            this.texmatrix = this.texmatrix.multiplyMatrices(data.matrix, this.texmatrix);
+            this.texmatrix = this.texmatrix.getInverse(this.texmatrix);
+            this.texmatrix = new _WebGL_math__WEBPACK_IMPORTED_MODULE_1__.Matrix4().identity();
+            this.texmatrix.makeTranslation(-data.origin.x / xoff, -data.origin.y / yoff, -data.origin.z / zoff);
+            this.texmatrix.scale({ x: 1.0 / xoff, y: 1.0 / yoff, z: 1.0 / zoff });
+            texmatrix: this.texmatrix,
+        this.projectionMatrix = new _math__WEBPACK_IMPORTED_MODULE_1__.Matrix4();
+        this.projectionMatrixInverse = new _math__WEBPACK_IMPORTED_MODULE_1__.Matrix4();
+        this.matrixWorldInverse = new _math__WEBPACK_IMPORTED_MODULE_1__.Matrix4();
+        this.updateProjectionMatrix();
+        this.matrix.lookAt(this.position, vector, this.up);
+                this.rotation.setEulerFromRotationMatrix(this.matrix, this.eulerOrder);
+    updateProjectionMatrix() {
+            this.projectionMatrix.makeOrthographic(this.left, this.right, this.top, this.bottom, this.near, this.far);
+            this.projectionMatrix.makePerspective(this.fov, this.aspect, this.near, this.far);
+        this.projectionMatrixInverse.getInverse(this.projectionMatrix);
+        this._worldInverse = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+        this._projInverse = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+        this._textureMatrix = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+        this._fullProjModelMatrix = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+        this._fullProjModelMatrixInv = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+        //setup full projection matrix from model to screen and inverted
+        this._fullProjModelMatrix = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+        this._fullProjModelMatrixInv = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+        this._fullProjModelMatrix.multiplyMatrices(camera.projectionMatrix, object._modelViewMatrix);
+        this._fullProjModelMatrixInv.getInverse(this._fullProjModelMatrix);
+        this._gl.uniformMatrix4fv(p_uniforms.projectionMatrix, false, this._fullProjModelMatrix.elements);
+        this._gl.uniformMatrix4fv(p_uniforms.projinv, false, this._fullProjModelMatrixInv.elements);
+            scene.updateMatrixWorld();
+            camera.updateMatrixWorld();
+        camera.matrixWorldInverse.getInverse(camera.matrixWorld);
+            "viewMatrix",
+            "modelViewMatrix",
+            "projectionMatrix",
+            "normalMatrix",
+        if (p_uniforms.projectionMatrix) {
+            this._gl.uniformMatrix4fv(p_uniforms.projectionMatrix, false, camera.projectionMatrix.elements);
+        if (p_uniforms.modelViewMatrix) {
+            this._gl.uniformMatrix4fv(p_uniforms.modelViewMatrix, false, object._modelViewMatrix.elements);
+        if (p_uniforms.normalMatrix) {
+            this._gl.uniformMatrix3fv(p_uniforms.normalMatrix, false, object._normalMatrix.elements);
+            this._projInverse.getInverse(camera.projectionMatrix);
+            this._gl.uniformMatrix4fv(p_uniforms.projinv, false, this._projInverse.elements);
+        if (p_uniforms.viewMatrix) {
+            this._gl.uniformMatrix4fv(p_uniforms.viewMatrix, false, camera.matrixWorldInverse.elements);
+        // Send projection matrix to uniform variable in shader
+                //need a matrix that maps back from model coordinates to texture coordinates
+                object._modelViewMatrix.getScale(this._direction); //scale factor of conversion
+                this._worldInverse.getInverse(object._modelViewMatrix);
+                this._projInverse.getInverse(camera.projectionMatrix);
+                this._textureMatrix.multiplyMatrices(object.material.texmatrix, this._worldInverse);
+                this._gl.uniformMatrix4fv(p_uniforms.textmat, false, this._textureMatrix.elements);
+                this._gl.uniformMatrix4fv(p_uniforms.projinv, false, this._projInverse.elements);
+            object._modelViewMatrix = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix4();
+            object._normalMatrix = new _math__WEBPACK_IMPORTED_MODULE_6__.Matrix3();
+        object._modelViewMatrix.multiplyMatrices(camera.matrixWorldInverse, object.matrixWorld);
+        object._normalMatrix.getInverse(object._modelViewMatrix);
+        object._normalMatrix.transpose();
+                this._direction.getPositionFromMatrix(light.matrixWorld);
+                this._vector3.getPositionFromMatrix(light.target.matrixWorld);
+                var reflected = object._modelViewMatrix.isReflected();
+        uniforms.modelViewMatrix = this.gl.getUniformLocation(this.sprite.program, "modelViewMatrix");
+        uniforms.projectionMatrix = this.gl.getUniformLocation(this.sprite.program, "projectionMatrix");
+        this.gl.uniformMatrix4fv(uniforms.projectionMatrix, false, camera.projectionMatrix.elements);
+                sprite._modelViewMatrix.multiplyMatrices(camera.matrixWorldInverse, sprite.matrixWorld);
+                sprite.z = -sprite._modelViewMatrix.elements[14];
+                    this.gl.uniformMatrix4fv(uniforms.modelViewMatrix, false, sprite._modelViewMatrix.elements);
+        this.matrix = new _math__WEBPACK_IMPORTED_MODULE_0__.Matrix4();
+        this.matrixWorld = new _math__WEBPACK_IMPORTED_MODULE_0__.Matrix4();
+        this.matrixAutoUpdate = true;
+        this.matrixWorldNeedsUpdate = true;
+        this.matrix.lookAt(vector, this.position, this.up);
+                this.rotation.setEulerFromRotationMatrix(this.matrix, this.eulerOrder);
+    updateMatrix() {
+        this.matrix.setPosition(this.position);
+            this.matrix.setRotationFromEuler(this.rotation, this.eulerOrder);
+            this.matrix.setRotationFromQuaternion(this.quaternion);
+            this.matrix.scale(this.scale);
+        this.matrixWorldNeedsUpdate = true;
+    updateMatrixWorld(force) {
+        if (this.matrixAutoUpdate === true)
+            this.updateMatrix();
+        if (this.matrixWorldNeedsUpdate === true || force === true) {
+                this.matrixWorld.copy(this.matrix);
+                this.matrixWorld.multiplyMatrices(this.parent.matrixWorld, this.matrix);
+        this.matrixWorldNeedsUpdate = false;
+            this.children[i].updateMatrixWorld(true);
+        object.matrix.copy(this.matrix);
+        object.matrixWorld.copy(this.matrixWorld);
+        object.matrixAutoUpdate = this.matrixAutoUpdate;
+        object.matrixWorldNeedsUpdate = this.matrixWorldNeedsUpdate;
+        this.matrixAutoUpdate = false;
+const viewProjectionMatrix = new _math__WEBPACK_IMPORTED_MODULE_0__.Matrix4();
+        camera.projectionMatrixInverse.getInverse(camera.projectionMatrix);
+        viewProjectionMatrix.multiplyMatrices(camera.matrixWorld, camera.projectionMatrixInverse);
+        return vector.applyProjection(viewProjectionMatrix);
+        camera.matrixWorldInverse.getInverse(camera.matrixWorld);
+        viewProjectionMatrix.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+        return vector.applyProjection(viewProjectionMatrix);
+const viewProjectionMatrix = new _math__WEBPACK_IMPORTED_MODULE_0__.Matrix4();
+            this.ray.origin.setFromMatrixPosition(camera.matrixWorld);
+            camera.projectionMatrixInverse.getInverse(camera.projectionMatrix);
+            viewProjectionMatrix.multiplyMatrices(camera.matrixWorld, camera.projectionMatrixInverse);
+            this.ray.direction.applyProjection(viewProjectionMatrix);
+            this.ray.direction.set(0, 0, -1).transformDirection(camera.matrixWorld);
+var matrixPosition = new _math__WEBPACK_IMPORTED_MODULE_0__.Vector3();
+    matrixPosition.getPositionFromMatrix(group.matrixWorld);
+    precision *= group.matrixWorld.getMaxScaleOnAxis();
+        sphere.applyMatrix4(group.matrixWorld);
+            triangle.applyMatrix4(group.matrixWorld);
+            cylinder.applyMatrix4(group.matrixWorld);
+        v1.applyMatrix4(group.matrixWorld);
+        v2.applyMatrix4(group.matrixWorld);
+            sphere.applyMatrix4(group.matrixWorld);
+/* harmony export */   Matrix3: () => (/* reexport safe */ _math__WEBPACK_IMPORTED_MODULE_3__.Matrix3),
+/* harmony export */   Matrix4: () => (/* reexport safe */ _math__WEBPACK_IMPORTED_MODULE_3__.Matrix4),
+/* harmony export */   conversionMatrix3: () => (/* reexport safe */ _math__WEBPACK_IMPORTED_MODULE_3__.conversionMatrix3),
+        this.texmatrix = null;
+        material.texmatrix = this.texmatrix;
+/* harmony export */   Matrix3: () => (/* reexport safe */ _math__WEBPACK_IMPORTED_MODULE_5__.Matrix3),
+/* harmony export */   Matrix4: () => (/* reexport safe */ _math__WEBPACK_IMPORTED_MODULE_5__.Matrix4),
+/* harmony export */   conversionMatrix3: () => (/* reexport safe */ _utils_conversionMatrix3__WEBPACK_IMPORTED_MODULE_3__.conversionMatrix3),
+/* harmony import */ var _utils_conversionMatrix3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/conversionMatrix3 */ "./src/WebGL/math/utils/conversionMatrix3.ts");
+/* harmony export */   Matrix3: () => (/* binding */ Matrix3),
+/* harmony export */   Matrix4: () => (/* binding */ Matrix4),
+class Matrix4 {
+    matrix3FromTopLeft() {
+        return new Matrix3(te[0], te[4], te[8], te[1], te[5], te[9], te[2], te[6], te[10]);
+            console.error(`Error with matrix4 setRotationFromEuler. Order: ${order}`);
+        // http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
+            const msg = "Matrix4.getInverse(): can't invert matrix, determinant is 0";
+        return new Matrix4(te[0], te[4], te[8], te[12], te[1], te[5], te[9], te[13], te[2], te[6], te[10], te[14], te[3], te[7], te[11], te[15]);
+mRotation = new Matrix4();
+mScale = new Matrix4();
+    applyMatrix3(m) {
+    applyMatrix4(m) {
+        // input: Matrix4 projection matrix
+    getPositionFromMatrix(m) {
+    setEulerFromRotationMatrix(m, order) {
+        // assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
+            console.error(`Error with vector's setEulerFromRotationMatrix: Unknown order: ${order}`);
+    setFromMatrixPosition(m) {
+    // unproject is defined after Matrix4
+        // input: THREE.Matrix4 affine matrix
+        mat4.multiplyMatrices(camera.matrixWorld, mat4.getInverse(camera.projectionMatrix));
+        return this.applyMatrix4(mat4);
+class Matrix3 {
+    getInverse3(matrix) {
+        // input: Matrix3
+        const me = matrix.elements;
+    getInverse(matrix, throwOnInvertible) {
+        // input: Matrix4
+        const me = matrix.elements;
+            const msg = "Matrix3.getInverse(): can't invert matrix, determinant is 0";
+        return new Matrix3(te[0], te[3], te[6], te[1], te[4], te[7], te[2], te[5], te[8]);
+    getMatrix4() {
+        return new Matrix4(m[0], m[3], m[6], 0, m[1], m[4], m[7], 0, m[2], m[5], m[8], 0);
+    applyMatrix4(matrix4) {
+        this.direction.add(this.origin).applyMatrix4(matrix4);
+        this.origin.applyMatrix4(matrix4);
+ * quaternion, vector, matrix
+/***/ "./src/WebGL/math/utils/conversionMatrix3.ts"
+  !*** ./src/WebGL/math/utils/conversionMatrix3.ts ***!
+/* harmony export */   conversionMatrix3: () => (/* binding */ conversionMatrix3)
+// return conversion matrix given crystal unit cell parameters
+ * @returns {Matrix3}
+function conversionMatrix3(a, b, c, alpha, beta, gamma) {
+    const conversionMatrix = new _math__WEBPACK_IMPORTED_MODULE_0__.Matrix3(a, b * cosGamma, c * cosBeta, 0, b * sinGamma, (c * (cosAlpha - cosBeta * cosGamma)) / sinGamma, 0, 0, (c *
+    return conversionMatrix;
+    updateMatrix() {
+        this.matrix.setPosition(this.position);
+        this.matrix.setRotationFromEuler(this.rotation3d);
+            this.matrix.scale(this.scale);
+        this.matrixWorldNeedsUpdate = true;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform mat4 viewMatrix;\nuniform float opacity;\nuniform vec3 fogColor;\nuniform float fogNear;\nuniform float fogFar;\nvarying vec3 vColor;\nvarying vec4 mvPosition;\n\n//DEFINEFRAGCOLOR\nvoid main() {\n    gl_FragColor = vec4( vColor, opacity );\n    if(fogNear != fogFar) {\n        float depth = -mvPosition.z;\n        float fogFactor = smoothstep( fogNear, fogFar, depth );\n        gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );\n    }\n}");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\n\nattribute vec3 position;\nattribute vec3 color;\n\nvarying vec3 vColor;\nvarying vec4 mvPosition;\n\nvoid main() {\n\n    vColor = color;\n    mvPosition = modelViewMatrix * vec4( position, 1.0 );\n    gl_Position = projectionMatrix * mvPosition;\n\n}");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform mat4 viewMatrix;\nuniform float opacity;\n\nuniform vec3 fogColor;\nuniform float fogNear;\nuniform float fogFar;\n#ifdef SHADED\nuniform highp sampler2D shading;\n#endif\nvarying vec3 vLightFront;\nvarying vec3 vColor;\n//DEFINEFRAGCOLOR\n\nvoid main() {\n\n    gl_FragColor = vec4( vec3 ( 1.0 ), opacity );\n\n    #ifndef WIREFRAME\n    gl_FragColor.xyz *= vLightFront;\n    #endif\n\n#ifdef SHADED\n    ivec2 dim = textureSize(shading,0);\n    float shadowFactor = texture2D(shading,vec2(gl_FragCoord.x/float(dim.x),gl_FragCoord.y/float(dim.y))).r;\n    vColor *= shadowFactor;\n#endif\n    gl_FragColor = gl_FragColor * vec4( vColor, opacity );\n    float depth = gl_FragCoord.z / gl_FragCoord.w;\n\n    float fogFactor = smoothstep( fogNear, fogFar, depth );\n\n    gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );\n\n}\n\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\nuniform vec3 directionalLightColor[ 1 ];\nuniform vec3 directionalLightDirection[ 1 ];\n\nattribute vec3 offset;\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\nattribute float radius;\n\nvarying vec3 vColor;\nvarying vec3 vLightFront;\n\nvoid main() {\n\n    vColor = color;\n\n    vec3 objectNormal = normal;\n    vec3 transformedNormal = normalMatrix * objectNormal;\n    vec4 mvPosition = modelViewMatrix * vec4( position * radius + offset, 1.0 );\n\n    vLightFront = vec3( 0.0 );\n\n    transformedNormal = normalize( transformedNormal );\n\n    vec4 lDirection = viewMatrix * vec4( directionalLightDirection[ 0 ], 0.0 );\n    vec3 dirVector = normalize( lDirection.xyz );\n    float dotProduct = dot( transformedNormal, dirVector );\n    vec3 directionalLightWeighting = vec3( max( dotProduct, 0.0 ) );\n\n    vLightFront += directionalLightColor[ 0 ] * directionalLightWeighting;\n\n    gl_Position = projectionMatrix * mvPosition;\n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform mat4 viewMatrix;\nuniform float opacity;\n\nuniform vec3 fogColor;\nuniform float fogNear;\nuniform float fogFar;\n#ifdef SHADED\nuniform highp sampler2D shading;\n#endif\nvarying vec3 vLightFront;\nvarying vec3 vColor;\nvarying vec4 mvPosition;\n\n\n//DEFINEFRAGCOLOR\n\nvoid main() {\n\n    gl_FragColor = vec4( vec3 ( 1.0 ), opacity );\n\n    #ifndef WIREFRAME\n    gl_FragColor.xyz *= vLightFront;\n    #endif\n#ifdef SHADED\n    ivec2 dim = textureSize(shading,0);\n    float shadowFactor = texture2D(shading,vec2(gl_FragCoord.x/float(dim.x),gl_FragCoord.y/float(dim.y))).r;\n    vColor *= shadowFactor;\n#endif\n    gl_FragColor = gl_FragColor * vec4( vColor, opacity );\n\n    if(fogNear != fogFar) {\n        float depth = -mvPosition.z;\n        float fogFactor = smoothstep( fogNear, fogFar, depth );\n        gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );\n    }\n\n}");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\nuniform vec3 directionalLightColor[ 1 ];\nuniform vec3 directionalLightDirection[ 1 ];\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\n\nvarying vec3 vColor;\nvarying vec3 vLightFront;\nvarying vec4 mvPosition;\n\nvoid main() {\n\n    vColor = color;\n\n    vec3 objectNormal = normal;\n    vec3 transformedNormal = normalMatrix * objectNormal;\n    mvPosition = modelViewMatrix * vec4( position, 1.0 );\n\n    vLightFront = vec3( 0.0 );\n\n    transformedNormal = normalize( transformedNormal );\n\n    vec4 lDirection = viewMatrix * vec4( directionalLightDirection[ 0 ], 0.0 );\n    vec3 dirVector = normalize( lDirection.xyz );\n    float dotProduct = dot( transformedNormal, dirVector );\n    vec3 directionalLightWeighting = vec3( max( dotProduct, 0.0 ) );\n\n    vLightFront += directionalLightColor[ 0 ] * directionalLightWeighting;\n\n    gl_Position = projectionMatrix * mvPosition;\n}");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n#ifdef SHADED\nuniform highp sampler2D shading;\n#endif\n\nuniform mat4 viewMatrix;\nuniform float opacity;\n\nuniform vec3 fogColor;\nuniform float fogNear;\nuniform float fogFar;\n\nvarying vec3 vLightFront;\nvarying vec3 vLightBack;\n\nvarying vec3 vColor;\nvarying vec4 mvPosition;\n\n//DEFINEFRAGCOLOR\n\nvoid main() {\n\n    gl_FragColor = vec4( vec3 ( 1.0 ), opacity );\n\n    #ifndef WIREFRAME\n    if ( gl_FrontFacing )\n       gl_FragColor.xyz *= vLightFront;\n    else\n       gl_FragColor.xyz *= vLightBack;\n    #endif\n\n    vec3 color = vColor;\n#ifdef SHADED\n    ivec2 dim = textureSize(shading,0);\n    float shadowFactor = texture2D(shading,vec2(gl_FragCoord.x/float(dim.x),gl_FragCoord.y/float(dim.y))).r;\n    color *= shadowFactor;\n#endif\n    gl_FragColor = gl_FragColor * vec4( color, opacity );\n\n    if(fogNear != fogFar) {\n        float depth = -mvPosition.z;\n        float fogFactor = smoothstep( fogNear, fogFar, depth );\n        gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );\n    }\n\n}\n\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\nuniform vec3 directionalLightColor[ 1 ];\nuniform vec3 directionalLightDirection[ 1 ];\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\n\nvarying vec3 vColor;\nvarying vec3 vLightFront;\nvarying vec3 vLightBack;\nvarying vec4 mvPosition;\n\nvoid main() {\n\n    vColor = color;\n\n    vec3 objectNormal = normal;\n    vec3 transformedNormal = normalMatrix * objectNormal;\n    mvPosition = modelViewMatrix * vec4( position, 1.0 );\n\n    vLightFront = vec3( 0.0 );\n    vLightBack = vec3( 0.0 );\n\n    transformedNormal = normalize( transformedNormal );\n\n    vec4 lDirection = viewMatrix * vec4( directionalLightDirection[ 0 ], 0.0 );\n    vec3 dirVector = normalize( lDirection.xyz );\n    float dotProduct = dot( transformedNormal, dirVector );\n    vec3 directionalLightWeighting = vec3( max( dotProduct, 0.0 ) );\n    vec3 directionalLightWeightingBack = vec3( max( -dotProduct, 0.0 ) );\n\n    vLightFront += directionalLightColor[ 0 ] * directionalLightWeighting;\n    vLightBack += directionalLightColor[ 0 ] * directionalLightWeightingBack;\n\n    gl_Position = projectionMatrix * mvPosition;\n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform float outlineWidth;\nuniform float outlinePushback;\nuniform float vWidth;\nuniform float vHeight;\nuniform float outlineMaxPixels;\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\n\nvarying vec4 mvPosition;\n\nvoid main() {\n\n    vec4 norm = modelViewMatrix*vec4(normalize(normal),0.0);\n    mvPosition = modelViewMatrix * vec4( position, 1.0 );\n    mvPosition.xy += norm.xy*outlineWidth;\n    vec4 outpos = projectionMatrix * mvPosition;\n\n    if(outlineMaxPixels > 0.0) {\n        vec4 unadjusted = projectionMatrix*modelViewMatrix * vec4( position, 1.0 );\n        float w = outpos.w;\n        //normalize homogeneous coords\n        unadjusted /= unadjusted.w;\n        outpos /= outpos.w;\n        vec2 diff = outpos.xy-unadjusted.xy;\n        //put into pixels\n        diff.x *= vWidth;\n        diff.y *= vHeight;\n        if ( length(diff) > outlineMaxPixels) {\n            vec2 ndiff = normalize(diff)*outlineMaxPixels;\n            ndiff.x /= vWidth;\n            ndiff.y /= vHeight;\n            outpos.xy = unadjusted.xy;\n            outpos.xy += ndiff;\n        }\n        outpos *= w; //if I don't do this things blow up\n    }\n    gl_Position = outpos;\n    mvPosition.z -= outlinePushback; //go backwards in model space\n    vec4 pushpos = projectionMatrix*mvPosition; //project to get z in projection space, I'm probably missing some simple math to do the same thing..\n    gl_Position.z = gl_Position.w*pushpos.z/pushpos.w;\n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\nuniform mat4 viewMatrix;\nuniform float opacity;\nuniform mat4 projectionMatrix;\n\nuniform vec3 fogColor;\nuniform float fogNear;\nuniform float fogFar;\nuniform float uDepth;\nuniform vec3 directionalLightColor[ 1 ];\n\nvarying vec3 vColor;\nvarying vec2 mapping;\nvarying float rval;\nvarying vec3 vLight;\nvarying vec3 center;\n\n#ifdef SHADED\nuniform highp sampler2D shading;\n#endif\n\n//DEFINEFRAGCOLOR\n\nvoid main() {\n    float lensqr = dot(mapping,mapping);\n    float rsqr = rval*rval;\n    if(lensqr > rsqr)\n       discard;\n    float z = sqrt(rsqr-lensqr);\n    vec3 cameraPos = center+ vec3(mapping.x,mapping.y,z);\n    vec4 clipPos = projectionMatrix * vec4(cameraPos, 1.0);\n    float ndcDepth = clipPos.z / clipPos.w;\n    gl_FragDepthEXT = ((gl_DepthRange.diff * ndcDepth) + gl_DepthRange.near + gl_DepthRange.far) / 2.0;\n    vec3 norm = normalize(vec3(mapping.x,mapping.y,z));\n    float dotProduct = dot( norm, vLight );\n    vec3 directionalLightWeighting = vec3( max( dotProduct, 0.0 ) );\n    vec3 vLight = directionalLightColor[ 0 ] * directionalLightWeighting;\n    vec3 color = vLight*vColor;\n#ifdef SHADED\n    ivec2 dim = textureSize(shading,0);\n    float shadowFactor = texture2D(shading,vec2(gl_FragCoord.x/float(dim.x),gl_FragCoord.y/float(dim.y))).r;\n    color *= shadowFactor;\n#endif    \n    gl_FragColor = vec4(color, opacity*opacity );\n\n    if(fogNear != fogFar) {\n        float depth = -cameraPos.z;\n        float fogFactor = smoothstep( fogNear, fogFar, depth );\n        gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );\n    }\n     \n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\nuniform vec3 directionalLightColor[ 1 ];\nuniform vec3 directionalLightDirection[ 1 ];\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\n\nvarying vec2 mapping;\nvarying vec3 vColor;\nvarying float rval;\nvarying vec3 vLight;\nvarying vec3 center;\n\nvoid main() {\n\n    vColor = color;\n    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );\n    center = mvPosition.xyz;\n    vec4 projPosition = projectionMatrix * mvPosition;\n    vec4 adjust = projectionMatrix* vec4(normal,0.0); adjust.z = 0.0; adjust.w = 0.0;\n    vec4 lDirection = viewMatrix * vec4( directionalLightDirection[ 0 ], 0.0 );\n    vLight = normalize( lDirection.xyz );\n    mapping = normal.xy;\n    rval = abs(normal.x);\n    gl_Position = projPosition+adjust;\n\n}\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform float opacity;\nuniform vec3 outlineColor;\nuniform vec3 fogColor;\nuniform float fogNear;\nuniform float fogFar;\nuniform mat4 projectionMatrix;\nvarying vec2 mapping;\nvarying float rval;\nvarying vec3 center;\n\nuniform float outlinePushback;\n\n//DEFINEFRAGCOLOR\n\nvoid main() {\n    float lensqr = dot(mapping,mapping);\n    float rsqr = rval*rval;\n    if(lensqr > rsqr)\n       discard;\n    float z = sqrt(rsqr-lensqr);\n    vec3 cameraPos = center+ vec3(mapping.x,mapping.y,z-outlinePushback);\n    vec4 clipPos = projectionMatrix * vec4(cameraPos, 1.0);\n    float ndcDepth = clipPos.z / clipPos.w;\n    gl_FragDepthEXT = ((gl_DepthRange.diff * ndcDepth) + gl_DepthRange.near + gl_DepthRange.far) / 2.0;\n    gl_FragColor = vec4(outlineColor, 1 );\n\n    if(fogNear != fogFar) {\n        float depth = -cameraPos.z;\n        float fogFactor = smoothstep( fogNear, fogFar, depth );\n        gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );\n    }\n}\n\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform float outlineWidth;\nuniform float outlinePushback;\nuniform float outlineMaxPixels;\nuniform float vWidth;\nuniform float vHeight;\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\n\nvarying vec2 mapping;\nvarying float rval;\nvarying vec3 center;\n\nvoid main() {\n\n    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );\n    center = mvPosition.xyz;\n    vec4 projPosition = projectionMatrix * mvPosition;\n    vec2 norm = normal.xy + vec2(sign(normal.x)*outlineWidth,sign(normal.y)*outlineWidth);\n\n    vec4 adjust = projectionMatrix* vec4(norm,normal.z,1.0); \n    mapping = norm.xy;\n    rval = abs(norm.x);\n    gl_Position = projPosition+vec4(adjust.xy,0.0,0.0);\n\n    if(outlineMaxPixels > 0.0) {\n        vec4 unadjusted = projectionMatrix*vec4(center.x+normal.x, center.y,center.z,1.0); \n        vec4 ccoord = projectionMatrix*vec4(center.xyz,1.0);\n        adjust = projectionMatrix* vec4(center.x+norm.x,center.y,center.z,1.0); \n        //subtract center \n        unadjusted.xyz -= ccoord.xyz;\n        adjust.xyz -= ccoord.xyz;\n        unadjusted /= unadjusted.w;\n        adjust /= adjust.w;\n        float diff = abs(adjust.x-unadjusted.x);\n        diff *= vWidth;\n        if(diff > outlineMaxPixels) {\n            \n            float fixlen = abs(unadjusted.x) + outlineMaxPixels/vWidth;\n            //adjsut reval by ratio of lengths\n            rval *= fixlen/abs(adjust.x);\n        }\n\n    }\n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform int useScreenCoordinates;\nuniform vec3 screenPosition;\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform float rotation;\nuniform vec2 scale;\nuniform vec2 alignment;\nuniform vec2 uvOffset;\nuniform vec2 uvScale;\n\nattribute vec2 position;\nattribute vec2 uv;\n\nvarying vec2 vUV;\n\nvoid main() {\n\n    vUV = uvOffset + uv * uvScale;\n\n    vec2 alignedPosition = position + alignment;\n\n    vec2 rotatedPosition;\n    rotatedPosition.x = ( cos(rotation) * alignedPosition.x - sin(rotation) * alignedPosition.y ) * scale.x;\n    rotatedPosition.y = ( sin(rotation) * alignedPosition.x + cos(rotation) * alignedPosition.y ) * scale.y;\n\n    vec4 finalPosition;\n\n    if(useScreenCoordinates != 0) {\n        finalPosition = vec4(screenPosition.xy + rotatedPosition, screenPosition.z, 1.0);\n    }\n\n    else {\n        finalPosition = projectionMatrix * modelViewMatrix * vec4(0.0, 0.0, 0.0, 1.0); finalPosition /= finalPosition.w;\n        finalPosition.xy += rotatedPosition; \n    }\n\n    gl_Position = finalPosition;\n\n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform sampler2D depthmap;\nvarying highp vec2 vTexCoords;\nuniform float vWidth;\nuniform float vHeight;\nuniform float total_strength;\nuniform float radius;\nuniform mat4 projinv;\nuniform mat4 projectionMatrix;\n\n//code for pseudorandom vector from chatgpt\nfloat hash(vec3 p) {\n    p = fract(p * vec3(0.1031, 0.1030, 0.0973));\n    p += dot(p, p.yzx + 33.33);\n    return fract((p.x + p.y) * p.z);\n}\n\n// Generate a pseudorandom vec3 from a seed vec3\nvec3 pseudorandomVec3(vec3 seed) {\n    vec3 randomVec;\n    randomVec.x = hash(seed);\n    randomVec.y = hash(seed + vec3(1.0, 0.0, 17.1));\n    randomVec.z = hash(seed + vec3(0.0, 13.23, 0.0));\n    return randomVec;\n}\n\nvoid main(void)\n{   \n   const float base = 0.2;\n   const float area = 0.75;\n   const int cycles = 1;\n\n   const int samples = 64;\n   vec3 sample_sphere[64] = vec3[](\n      vec3(0.091258,-0.510164,0.000000),\n      vec3(-0.204347,-0.872967,0.187199),\n      vec3(0.009690,-0.263696,-0.110414),\n      vec3(0.175208,-0.563987,0.228527),\n      vec3(-0.001824,-0.003113,-0.000323),\n      vec3(0.411134,-0.719869,-0.261530),\n      vec3(-0.074272,-0.377368,0.276290),\n      vec3(-0.147773,-0.381587,-0.284529),\n      vec3(0.173317,-0.199635,0.063295),\n      vec3(-0.186452,-0.199460,0.076965),\n      vec3(0.143985,-0.308160,-0.307687),\n      vec3(0.053194,-0.148286,0.169589),\n      vec3(-0.547656,-0.486476,-0.317378),\n      vec3(0.020804,-0.015092,-0.004574),\n      vec3(-0.038006,-0.043165,0.054059),\n      vec3(-0.094795,-0.443908,-0.731525),\n      vec3(0.547552,-0.396466,0.461477),\n      vec3(-0.176886,-0.089989,0.007315),\n      vec3(0.074401,-0.048840,-0.074039),\n      vec3(-0.008240,-0.075697,0.178197),\n      vec3(-0.307880,-0.185053,-0.368943),\n      vec3(0.309520,-0.108483,0.041646),\n      vec3(-0.773478,-0.292946,0.538166),\n      vec3(0.184487,-0.231594,-0.820065),\n      vec3(0.207318,-0.100531,0.361797),\n      vec3(-0.173306,-0.037737,-0.055289),\n      vec3(0.548102,-0.105342,-0.253237),\n      vec3(-0.119342,-0.043907,0.285162),\n      vec3(-0.270247,-0.087861,-0.751357),\n      vec3(0.449312,-0.039777,0.236146),\n      vec3(-0.743773,-0.036095,0.196056),\n      vec3(0.148819,-0.004300,-0.231448),\n      vec3(0.008773,0.000809,0.051047),\n      vec3(-0.461467,0.027390,-0.357386),\n      vec3(0.169626,0.013338,-0.014053),\n      vec3(-0.043786,0.007095,0.047331),\n      vec3(0.004821,0.140371,-0.988260),\n      vec3(0.092402,0.023994,0.101860),\n      vec3(-0.295335,0.061530,-0.027372),\n      vec3(0.024903,0.007537,-0.018901),\n      vec3(-0.081463,0.125402,0.447794),\n      vec3(-0.397119,0.231805,-0.631062),\n      vec3(0.163853,0.059014,0.044905),\n      vec3(-0.495220,0.214357,0.254139),\n      vec3(0.306123,0.373687,-0.825715),\n      vec3(0.021665,0.026737,0.053220),\n      vec3(-0.208231,0.117129,-0.098685),\n      vec3(0.139749,0.080968,-0.043086),\n      vec3(-0.153599,0.182814,0.262090),\n      vec3(-0.159673,0.496777,-0.743568),\n      vec3(0.134797,0.117152,0.095753),\n      vec3(-0.155626,0.120533,0.019395),\n      vec3(0.042311,0.054462,-0.049709),\n      vec3(0.001257,0.031288,0.034468),\n      vec3(-0.002271,0.003199,-0.002304),\n      vec3(0.662104,0.717307,0.033854),\n      vec3(-0.373100,0.576021,0.308274),\n      vec3(0.024233,0.231316,-0.173688),\n      vec3(0.161311,0.420217,0.234273),\n      vec3(-0.045248,0.078031,-0.010411),\n      vec3(0.167453,0.376942,-0.094872),\n      vec3(-0.056194,0.433247,0.173218),\n      vec3(-0.016224,0.123149,-0.035569),\n      vec3(0.067127,0.407641,0.028479)\n   );\n\n   float depth = texture2D(depthmap, vTexCoords).r;\n   if(depth == 1.0) {\n      discard;\n   }\n\n   vec4 screen_position = vec4(vTexCoords, depth,1.0);\n   vec4 pos = projinv*screen_position;\n   pos /= pos.w;\n   vec3 position = pos.xyz;\n\n   //approximate the normal from the depth map; I find this simpler\n   //than trying to recompute the exact normal within every possible object shader\n\n   //pixel offset positions in screen space\n   ivec2 dim = textureSize(depthmap,0);\n   vec2 offset1 = vec2(0.0,1.0/float(dim.y));\n   vec2 offset2 = vec2(1.0/float(dim.x),0.0);\n   float depth1 = texture2D(depthmap, vTexCoords + offset1).r;\n   float depth2 = texture2D(depthmap, vTexCoords + offset2).r;\n   \n   vec3 p1 = vec3(screen_position.xy+offset1, depth1 - depth);\n   vec3 p2 = vec3(screen_position.xy+offset2, depth2 - depth);\n\n   //convert to model space\n   vec4 pos1 = projinv*vec4(p1,1);\n   pos1 /= pos1.w;\n   vec4 pos2 = projinv*vec4(p2,1);\n   pos2 /= pos2.w;\n\n   vec3 normal = normalize(cross(pos1.xyz-position, pos2.xyz-position)); //model normal, important we normalize in model space\n\n   //pseudo random number\n\n   float occlusion = 0.0;\n   for(int c = 0; c < cycles; c++) {\n   vec3 random = normalize(pseudorandomVec3(position+float(c)));\n   for(int i=0; i < samples; i++) {\n\n      vec3 ray = radius * reflect(sample_sphere[i],random);\n      vec3 hemi_ray = position + sign(dot(ray,normal)) * ray; //model space\n      vec4 hemi_screen = projectionMatrix*vec4(hemi_ray,1.0);\n      hemi_screen /= hemi_screen.w;\n      \n      float occ_depth = texture2D(depthmap, clamp(hemi_screen.xy,0.0,1.0)).r;\n      float difference = hemi_screen.z - occ_depth;\n      \n      occlusion += step(0.0, difference) * (1.0-smoothstep(0.0, area, difference));\n   }\n   }\n   float ao = 1.0 - total_strength * occlusion * (1.0 / float(cycles*samples));\n   gl_FragDepthEXT = clamp(ao+base,0.0,1.0);\n\n}");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\nuniform vec3 directionalLightColor[ 1 ];\nuniform vec3 directionalLightDirection[ 1 ];\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\nattribute float radius;\n\nvarying vec3 vColor;\nvarying vec3 vLight;\nvarying vec3 cposition;\nvarying vec3 p1;\nvarying vec3 p2;\nvarying float r;\n\nvoid main() {\n\n    vColor = color; vColor.z = abs(vColor.z); //z indicates which vertex and so would vary\n    r = abs(radius);\n    vec4 to = modelViewMatrix*vec4(normal, 1.0); //normal is other point of cylinder\n    vec4 pt = modelViewMatrix*vec4(position, 1.0);\n    vec4 mvPosition = pt;\n    p1 = pt.xyz; p2 = to.xyz;\n    vec3 norm = to.xyz-pt.xyz;\n    float mult = 1.1; //slop to account for perspective of sphere\n    if(length(p1) > length(p2)) { //billboard at level of closest point\n       mvPosition = to;\n    }\n    vec3 n = normalize(mvPosition.xyz);\n    bool isperspective = (projectionMatrix[3][3] == 0.0);\n//intersect with the plane defined by the camera looking at the billboard point\n    if(color.z >= 0.0) { //p1\n       if(isperspective) { //perspective\n         vec3 pnorm = normalize(p1);\n         float t = dot(mvPosition.xyz-p1,n)/dot(pnorm,n);\n         mvPosition.xyz = p1+t*pnorm; \n       } else { //orthographic\n         mvPosition.xyz = p1;\n       }\n    } else {\n      if(isperspective) { //perspective\n         vec3 pnorm = normalize(p2);\n         float t = dot(mvPosition.xyz-p2,n)/dot(pnorm,n);\n         mvPosition.xyz = p2+t*pnorm;\n       } else { //orthographic\n         mvPosition.xyz = p2;\n       } \n       mult *= -1.0;\n    }\n\n    if(isperspective) { //perspective\n      vec3 cr = normalize(cross(mvPosition.xyz,norm))*radius;\n      vec3 doublecr = normalize(cross(mvPosition.xyz,cr))*radius;\n      mvPosition.xyz +=  mult*(cr + doublecr).xyz;\n    } else {\n      vec3 cr = normalize(cross(vec3(0.0,0.0,-1.0),norm))*radius;\n      vec3 doublecr = normalize(cross(vec3(0.0,0.0,-1.0),cr))*radius;\n      mvPosition.xyz +=  mult*(cr + doublecr).xyz;     \n    }\n\n    cposition = mvPosition.xyz;\n    gl_Position = projectionMatrix * mvPosition;\n    vec4 lDirection = viewMatrix * vec4( directionalLightDirection[ 0 ], 0.0 );\n    vLight = normalize( lDirection.xyz )*directionalLightColor[0]; //not really sure this is right, but color is always white so..\n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform float opacity;\nuniform mat4 projectionMatrix;\n\nuniform vec3 fogColor;\nuniform float fogNear;\nuniform float fogFar;\n\nvarying vec3 vLight;\nvarying vec3 vColor;\nvarying vec3 cposition;\nvarying vec3 p1;\nvarying vec3 p2;\nvarying float r;\n\n#ifdef SHADED\nuniform highp sampler2D shading;\n#endif\n\n//DEFINEFRAGCOLOR\n\n//cylinder-ray intersection testing taken from http://mrl.nyu.edu/~dzorin/cg05/lecture12.pdf\n//also useful: http://stackoverflow.com/questions/9595300/cylinder-impostor-in-glsl\n//with a bit more care (caps) this could be a general cylinder imposter (see also outline)\nvoid main() {\n    vec3 color = abs(vColor);\n    vec3 pos = cposition;\n    vec3 p = pos; //ray point\n    vec3 v = vec3(0.0,0.0,-1.0); //ray normal - orthographic\n    if(projectionMatrix[3][3] == 0.0) v = normalize(pos); //ray normal - perspective\n    vec3 pa = p1; //cyl start\n    vec3 va = normalize(p2-p1); //cyl norm\n    vec3 tmp1 = v-(dot(v,va)*va);\n    vec3 deltap = p-pa;\n    float A = dot(tmp1,tmp1);\n    if(A == 0.0) discard;\n    vec3 tmp2 = deltap-(dot(deltap,va)*va);\n    float B = 2.0*dot(tmp1, tmp2);\n    float C = dot(tmp2,tmp2)-r*r;\n//quadratic equation!\n    float det = (B*B) - (4.0*A*C);\n    if(det < 0.0) discard;\n    float sqrtDet = sqrt(det);\n    float posT = (-B+sqrtDet)/(2.0*A);\n    float negT = (-B-sqrtDet)/(2.0*A);\n    float intersectionT = min(posT,negT);\n    vec3 qi = p+v*intersectionT;\n    float dotp1 = dot(va,qi-p1);\n    float dotp2 = dot(va,qi-p2);\n    vec3 norm;\n    if( dotp1 < 0.0 || dotp2 > 0.0) { //(p-c)^2 + 2(p-c)vt +v^2+t^2 - r^2 = 0\n       vec3 cp;\n       if( dotp1 < 0.0) {  \n//        if(vColor.x < 0.0 ) discard; //color sign bit indicates if we should cap or not\n        cp = p1;\n       } else {\n//          if(vColor.y < 0.0 ) discard;\n          cp = p2;\n       }\n       vec3 diff = p-cp;\n       A = dot(v,v);\n       B = dot(diff,v)*2.0;\n       C = dot(diff,diff)-r*r;\n       det = (B*B) - (4.0*C);\n       if(det < 0.0) discard;\n       sqrtDet = sqrt(det);\n       posT = (-B+sqrtDet)/(2.0);\n       negT = (-B-sqrtDet)/(2.0);\n       float t = min(posT,negT);\n       qi = p+v*t; \n       norm = normalize(qi-cp); \n    } else {\n       norm = normalize(qi-(dotp1*va + p1));\n    }\n    vec4 clipPos = projectionMatrix * vec4(qi, 1.0);\n    float ndcDepth = clipPos.z / clipPos.w;\n    float depth = ((gl_DepthRange.diff * ndcDepth) + gl_DepthRange.near + gl_DepthRange.far) / 2.0;\n    gl_FragDepthEXT = depth;");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\nuniform vec3 directionalLightColor[ 1 ];\nuniform vec3 directionalLightDirection[ 1 ];\nuniform vec3 outlineColor;\nuniform float outlineWidth;\nuniform float outlinePushback;\nuniform float outlineMaxPixels;\nuniform float vWidth;\nuniform mat4 projinv;\n\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec3 color;\nattribute float radius;\n\nvarying vec3 vColor;\nvarying vec3 vLight;\nvarying vec3 cposition;\nvarying vec3 p1;\nvarying vec3 p2;\nvarying float r;\n\nvoid main() {\n\n    vColor = outlineColor;\n    float rad = radius+sign(radius)*outlineWidth;\n    r = abs(rad);\n\n    vec4 to = modelViewMatrix*vec4(normal, 1.0); //normal is other point of cylinder\n    vec4 pt = modelViewMatrix*vec4(position, 1.0);\n//pushback\n    float scale = 1.0;\n    if(projectionMatrix[3][3] != 0.0) { //orthographic\n        to.z -= outlinePushback;\n        pt.z -= outlinePushback;\n    } else { //perspective\n        vec4 midbefore = pt;\n        if(length(to.xyz) < length(pt)) {\n            midbefore = to;\n        }\n        vec4 midafter = midbefore;\n        midafter.xyz += normalize(midbefore.xyz)*outlinePushback;\n\n        to.xyz += normalize(to.xyz)*outlinePushback;\n        pt.xyz += normalize(pt.xyz)*outlinePushback;\n\n        //figure out a scaling factor for radius to account for perspective setback\n        vec4 midbeforer = vec4(midbefore.x+rad,midbefore.y, midbefore.z, midbefore.w);\n        vec4 midafterr = vec4(midafter.x+rad,midafter.y, midafter.z, midafter.w);\n\n        vec4 mb = projectionMatrix*midbefore;\n        vec4 mbr = projectionMatrix*midbeforer;\n        vec4 ma = projectionMatrix*midafter;\n        vec4 mar = projectionMatrix*midafterr;\n        mb /= mb.w;\n        mbr /= mbr.w;\n        ma /= ma.w;\n        mar /= mar.w;\n        scale = abs((mbr.x-mb.x)/(mar.x-ma.x));\n        rad *= scale;\n        r = abs(rad);\n    }\n    vec4 mvPosition = pt;\n    p1 = pt.xyz; p2 = to.xyz;\n    vec3 norm = to.xyz-pt.xyz;\n    float mult = 1.1; //slop to account for perspective of sphere\n    if(length(p1) > length(p2)) { //billboard at level of closest point\n       mvPosition = to;\n    }\n\n    vec3 n = normalize(mvPosition.xyz);\n//intersect with the plane defined by the camera looking at the billboard point\n    if(color.z >= 0.0) { //p1\n       vec3 pnorm = normalize(p1);\n       float t = dot(mvPosition.xyz-p1,n)/dot(pnorm,n);\n       mvPosition.xyz = p1+t*pnorm;\n    } else {\n       vec3 pnorm = normalize(p2);\n       float t = dot(mvPosition.xyz-p2,n)/dot(pnorm,n);\n       mvPosition.xyz = p2+t*pnorm;\n       mult *= -1.0;\n    }\n\n    if(outlineMaxPixels > 0.0) {\n        vec4 cpos = mvPosition;\n        vec4 unadjusted = projectionMatrix*vec4(cpos.x+abs(scale*radius), cpos.y,cpos.z,cpos.w); \n        vec4 ccoord = projectionMatrix*cpos;\n        vec4 adjust = projectionMatrix*vec4(cpos.x+r,cpos.y,cpos.z,cpos.w); \n        unadjusted /= unadjusted.w;\n        adjust /= adjust.w;\n        unadjusted.xyz -= ccoord.xyz/ccoord.w;\n        adjust.xyz -= ccoord.xyz/ccoord.w;\n        float diff = abs(adjust.x-unadjusted.x);\n        diff *= vWidth; //this should now be in pixels\n        if(diff > outlineMaxPixels) {\n            float fixlen = abs(unadjusted.x) + outlineMaxPixels/vWidth; \n            vec4 pcoord = ccoord;\n            pcoord.x += fixlen*pcoord.w;\n            vec4 altc = projinv*pcoord;\n            r= abs(altc.x-cpos.x);\n        }\n    }\n\n    vec3 cr = normalize(cross(mvPosition.xyz,norm))*rad;\n    vec3 doublecr = normalize(cross(mvPosition.xyz,cr))*rad;\n    mvPosition.xy +=  mult*(cr + doublecr).xy;\n    cposition = mvPosition.xyz;\n    gl_Position = projectionMatrix * mvPosition;\n    vLight = vec3(1.0,1.0,1.0);\n}\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\nuniform highp sampler3D data;\nuniform highp sampler2D colormap;\nuniform highp sampler2D depthmap;\n\n\nuniform mat4 textmat;\nuniform mat4 projinv;\nuniform mat4 projectionMatrix;\n\nuniform float step;\nuniform float subsamples;\nuniform float maxdepth;\nuniform float transfermin;\nuniform float transfermax;\nin  vec4 mvPosition;\nout vec4 color;\nvoid main(void) {\n\n   vec4 pos = mvPosition;\n   bool seengood = false;\n   float i = 0.0;\n   color = vec4(1,1,1,0);\n   float increment = 1.0/subsamples;\n   float maxsteps = (maxdepth*subsamples/step);\n//there's probably a better way to do this..\n//calculate farthest possible point in model coordinates\n   vec4 maxpos = vec4(pos.x,pos.y,pos.z-maxdepth,1.0);\n// convert to projection\n   maxpos = projectionMatrix*maxpos;\n   vec4 startp = projectionMatrix*pos;\n// homogonize\n   maxpos /= maxpos.w;\n   startp /= startp.w;\n//take x,y from start and z from max\n   maxpos = vec4(startp.x,startp.y,maxpos.z,1.0);\n//convert back to model space\n   maxpos = projinv*maxpos;\n   maxpos /= maxpos.w;\n   float incr = step/subsamples;\n//get depth from depthmap\n//startp is apparently [-1,1]\n   vec2 tpos = startp.xy/2.0+0.5;\n   float depth = texture(depthmap, tpos).r;\n//compute vector between start and end\n   vec4 direction = maxpos-pos;\n   for( i = 0.0; i <= maxsteps; i++) {\n      vec4 pt = (pos+(i/maxsteps)*direction);\n      vec4 ppt = projectionMatrix*pt;\n      float ptdepth = ppt.z/ppt.w;\n      ptdepth = ((gl_DepthRange.diff * ptdepth) + gl_DepthRange.near + gl_DepthRange.far) / 2.0;\n      if(ptdepth > depth) break;\n      pt = textmat*pt;\n//       pt /= pt.w;\n      if(pt.x >= -0.01 && pt.y >= -0.01 && pt.z >= -0.01 && pt.x <= 1.01 && pt.y <= 1.01 && pt.z <= 1.01) {\n         seengood = true;\n      } else if(seengood) {\n         break;\n      }\n      if( pt.x < -0.01 || pt.x > 1.01 || pt.y < -0.01 || pt.y > 1.01 || pt.z < -0.01 || pt.z > 1.01  ){\n          color.a = 0.0;\n          continue;\n      }\n      else {\n         float val = texture(data, pt.zyx).r;\n         if(isinf(val)) continue; //masked out\n         float cval = (val-transfermin)/(transfermax-transfermin); //scale to texture 0-1 range\n         vec4 val_color = texture(colormap, vec2(cval,0.5));\n         color.rgb = color.rgb*color.a + (1.0-color.a)*val_color.a*val_color.rgb;\n         color.a += (1.0 - color.a) * val_color.a; \n         if(color.a > 0.0) color.rgb /= color.a;\n//          color = vec4(pt.x, pt.y, pt.z, 1.0);\n      }\n//       color = vec4(pt.x, pt.y, pt.z, 0.0)\n    }\n}\n\n        ");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("uniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\n\nin vec3 position;\nout vec4 mvPosition;\nvoid main() {\n\n    mvPosition = modelViewMatrix * vec4( position, 1.0 );\n    gl_Position = projectionMatrix*mvPosition;\n}\n");
+    applyMatrix4(matrix) {
+        this.direction.add(this.c1).applyMatrix4(matrix);
+        this.c1.applyMatrix4(matrix);
+        this.c2.applyMatrix4(matrix);
+        this.radius = this.radius * matrix.getMaxScaleOnAxis();
+    applyMatrix4(matrix) {
+        this.center.applyMatrix4(matrix);
+        this.radius = this.radius * matrix.getMaxScaleOnAxis();
+    applyMatrix4(matrix) {
+        this.a.applyMatrix4(matrix);
+        this.b.applyMatrix4(matrix);
+        this.c.applyMatrix4(matrix);
+/* harmony export */   Matrix3: () => (/* reexport safe */ _3Dmol__WEBPACK_IMPORTED_MODULE_0__.Matrix3),
+/* harmony export */   Matrix4: () => (/* reexport safe */ _3Dmol__WEBPACK_IMPORTED_MODULE_0__.Matrix4),
+/* harmony export */   conversionMatrix3: () => (/* reexport safe */ _3Dmol__WEBPACK_IMPORTED_MODULE_0__.conversionMatrix3),
+//import { Matrix4 } from "../WebGL";
+            let matrix11 = structops.getField('matrix[1][1]');
+            let matrix12 = structops.getField('matrix[1][2]');
+            let matrix13 = structops.getField('matrix[1][3]');
+            let matrix21 = structops.getField('matrix[2][1]');
+            let matrix22 = structops.getField('matrix[2][2]');
+            let matrix23 = structops.getField('matrix[2][3]');
+            let matrix31 = structops.getField('matrix[3][1]');
+            let matrix32 = structops.getField('matrix[3][2]');
+            let matrix33 = structops.getField('matrix[3][3]');
+                const matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_5__.Matrix4(matrix11[i], matrix12[i], matrix13[i], vector1[i], matrix21[i], matrix22[i], matrix23[i], vector2[i], matrix31[i], matrix32[i], matrix33[i], vector3[i]);
+                modelData[modelData.length - 1].symmetries.push(matrix);
+    return new _WebGL__WEBPACK_IMPORTED_MODULE_2__.Vector3(x, y, z).applyMatrix3(cmat);
+        let conversionMatrix;
+            conversionMatrix = (0,_WebGL__WEBPACK_IMPORTED_MODULE_2__.conversionMatrix3)(a, b, c, alpha_deg, beta_deg, gamma_deg);
+                const coords = fractionalToCartesian(conversionMatrix, parseFloat(mmCIF._atom_site_fract_x[i]), parseFloat(mmCIF._atom_site_fract_y[i]), parseFloat(mmCIF._atom_site_fract_z[i]));
+                const matrix11 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[1][1]"][i]);
+                const matrix12 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[1][2]"][i]);
+                const matrix13 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[1][3]"][i]);
+                const matrix21 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[2][1]"][i]);
+                const matrix22 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[2][2]"][i]);
+                const matrix23 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[2][3]"][i]);
+                const matrix31 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[3][1]"][i]);
+                const matrix32 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[3][2]"][i]);
+                const matrix33 = parseFloat(mmCIF["_pdbx_struct_oper_list_matrix[3][3]"][i]);
+                const matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_2__.Matrix4(matrix11, matrix12, matrix13, vector1, matrix21, matrix22, matrix23, vector2, matrix31, matrix32, matrix33, vector3);
+                modelData[modelData.length - 1].symmetries.push(matrix);
+                let matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_2__.Matrix4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+                            matrix.elements[coord + 0] = coefficient;
+                            matrix.elements[coord + 4] = coefficient;
+                            matrix.elements[coord + 8] = coefficient;
+                            matrix.elements[coord + 12] = coefficient;
+                const conversionMatrix4 = conversionMatrix.getMatrix4();
+                const conversionInverse = new _WebGL__WEBPACK_IMPORTED_MODULE_2__.Matrix4().getInverse(conversionMatrix4, true);
+                matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_2__.Matrix4().multiplyMatrices(matrix, conversionInverse);
+                matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_2__.Matrix4().multiplyMatrices(conversionMatrix4, matrix);
+                modelData[modelData.length - 1].symmetries.push(matrix);
+        matrix4: undefined,
+        matrix: undefined,
+        //need a transformation matrix
+        cryst.matrix4 = new _WebGL__WEBPACK_IMPORTED_MODULE_0__.Matrix4(xVec.x, yVec.x, zVec.x, 0, xVec.y, yVec.y, zVec.y, 0, xVec.z, yVec.z, zVec.z, 0, 0, 0, 0, 1);
+        // include translation in matrix
+        let t = new _WebGL__WEBPACK_IMPORTED_MODULE_0__.Matrix4().makeTranslation(origin.x, origin.y, origin.z);
+        cryst.matrix4 = cryst.matrix4.multiplyMatrices(t, cryst.matrix4);
+        cryst.matrix = cryst.matrix4.matrix3FromTopLeft();
+        // all translation and scaling done by matrix, so reset origin and unit
+            var matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_1__.Matrix4(transforms[i].matrix);
+            matrix.transpose();
+            symmetries.push(matrix);
+    var matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_0__.Matrix3(lattice.xVec[0], lattice.xVec[1], lattice.xVec[2], lattice.yVec[0], lattice.yVec[1], lattice.yVec[2], lattice.zVec[0], lattice.zVec[1], lattice.zVec[2]);
+    matrix.multiplyScalar(lattice.length);
+    atoms.modelData = [{ symmetries: [], cryst: { matrix: matrix } }];
+            var matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_0__.Matrix3(lattice[0], lattice[3], lattice[6], lattice[1], lattice[4], lattice[7], lattice[2], lattice[5], lattice[8]);
+            atoms.modelData = [{ cryst: { matrix: matrix } }];
+            let matrix = new _WebGL__WEBPACK_IMPORTED_MODULE_0__.Matrix4();
+                    matrix.elements[n - 1] = parseFloat(line.substring(23, 33));
+                    matrix.elements[n - 1 + 4] = parseFloat(line.substring(33, 43));
+                    matrix.elements[n - 1 + 8] = parseFloat(line.substring(43, 53));
+                    matrix.elements[n - 1 + 12] = parseFloat(line.substring(53));
+            matrix.elements[3] = 0;
+            matrix.elements[7] = 0;
+            matrix.elements[11] = 0;
+            matrix.elements[15] = 1;
+            modelData.symmetries.push(matrix);
+    let conversionMatrix = null;
+        conversionMatrix = (0,_WebGL__WEBPACK_IMPORTED_MODULE_0__.conversionMatrix3)(cryst.a, cryst.b, cryst.c, cryst.alpha, cryst.beta, cryst.gamma);
+        toFrac = new _WebGL__WEBPACK_IMPORTED_MODULE_0__.Matrix3();
+        toFrac.getInverse3(conversionMatrix);
+        let c = v.clone().applyMatrix3(toFrac);
+        adjustmentVec.applyMatrix3(conversionMatrix);
+        //the symmetry matrix
+                xyz.applyMatrix4(copyMatrices[t]);
+            //modify symmetry matrix to include translation
+                modifiedIdentity = t; //keep track of which matrix was identity
+            atoms[n].sym = -1; //if identity matrix is present, original labeled -1
+                    xyz.applyMatrix4(copyMatrices[t]);
+                        //wrap per-atom instead of per matrix using the centroid
+                //wrap per-atom instead of per matrix using the centroid
+                xyz.applyMatrix4(copyMatrices[modifiedIdentity]);
+                    newXYZ.applyMatrix4(copyMatrices[l]);

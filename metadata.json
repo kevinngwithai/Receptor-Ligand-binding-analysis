@@ -1,0 +1,5 @@
+{
+  "name": "Protein-Ligand Complex Comparator",
+  "description": "Compare 3D structures of protein-ligand complexes before and after modification.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,241 @@
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+        this._updateLastWrittenByte();
+     * Update the last written byte offset
+    _updateLastWrittenByte() {
+ * Compute the optimal bit lengths for a tree and update the total bit length
+ *     The length opt_len is updated; static_len is also updated if stree is
+ * Update the total bit length for the current block.
+ *     and corresponding code. The length opt_len is updated; static_len is
+ *     also updated if stree is not null. The field max_code is set.
+  /* Update opt_len to include the bit length tree and counts */
+ * Read a new buffer from the current input stream, update the adler32
+ * Updates strstart and lookahead.
+      /* UPDATE_HASH(s, s->ins_h, s->window[str + 1]); */
+//        Call update_hash() MIN_MATCH-3 more times
+        /* UPDATE_HASH(s, s->ins_h, s->window[str + MIN_MATCH-1]); */
+   * the longest match routines.  Update the high water mark for the next
+     * including any pending bits. This also updates the debugging counts.
+//    /* Update debugging counts for the data about to be copied. */
+  /* Update the sliding window with the last s->w_size bytes of the copied
+   * than s->w_size bytes were copied. Also update the number of bytes to
+        /* UPDATE_HASH(s, s.ins_h, s.window[s.strstart+1]); */
+//                Call UPDATE_HASH() MIN_MATCH-3 more times
+   * updated to the new high water mark.
+      let beg = s.pending;   /* start of bytes to update crc */
+        //--- HCRC_UPDATE(beg) ---//
+      //--- HCRC_UPDATE(beg) ---//
+      let beg = s.pending;   /* start of bytes to update crc */
+          //--- HCRC_UPDATE(beg) ---//
+      //--- HCRC_UPDATE(beg) ---//
+      let beg = s.pending;   /* start of bytes to update crc */
+          //--- HCRC_UPDATE(beg) ---//
+      //--- HCRC_UPDATE(beg) ---//
+      /* UPDATE_HASH(s, s->ins_h, s->window[str + MIN_MATCH-1]); */
+  /* update state and return */
+    /* go to next symbol, update count, len */
+  /* update state and reset the rest of it */
+ Update the window with the last wsize (normally 32K) bytes written before
+const updatewindow = (strm, src, end, copy) => {
+                /*UPDATE_CHECK(state.check, put - _out, _out);*/
+     error.  Call updatewindow() to create and/or update the window state.
+    if (updatewindow(strm, strm.output, strm.next_out, _out - strm.avail_out)) ;
+    strm.adler = state.check = /*UPDATE_CHECK(state.check, strm.next_out - _out, _out);*/
+  /* copy dictionary to window using updatewindow(), which will amend the
+  ret = updatewindow(strm, dictionary, dictLength, dictLength);
+	update : function(c, buf, off, len) {
+	crc : function(b,o,l)  {  return UPNG.crc.update(0xffffffff,b,o,l) ^ 0xffffffff;  }
+ * Read a new buffer from the current input stream, update the adler32
+ * Updates strstart and lookahead.
+      /* UPDATE_HASH(s, s->ins_h, s->window[str + 1]); */
+//        Call update_hash() MIN_MATCH-3 more times
+        /* UPDATE_HASH(s, s->ins_h, s->window[str + MIN_MATCH-1]); */
+   * the longest match routines.  Update the high water mark for the next
+        /* UPDATE_HASH(s, s.ins_h, s.window[s.strstart+1]); */
+//                Call UPDATE_HASH() MIN_MATCH-3 more times
+   * updated to the new high water mark.
+      beg = s.pending;  /* start of bytes to update crc */
+      beg = s.pending;  /* start of bytes to update crc */
+      beg = s.pending;  /* start of bytes to update crc */
+      /* UPDATE_HASH(s, s->ins_h, s->window[str + MIN_MATCH-1]); */
+  /* update state and return */
+  /* update state and reset the rest of it */
+ Update the window with the last wsize (normally 32K) bytes written before
+function updatewindow(strm, src, end, copy) {
+                /*UPDATE(state.check, put - _out, _out);*/
+     error.  Call updatewindow() to create and/or update the window state.
+    if (updatewindow(strm, strm.output, strm.next_out, _out - strm.avail_out)) {
+    strm.adler = state.check = /*UPDATE(state.check, strm.next_out - _out, _out);*/
+  /* copy dictionary to window using updatewindow(), which will amend the
+  ret = updatewindow(strm, dictionary, dictLength, dictLength);
+    /* go to next symbol, update count, len */
+ * Compute the optimal bit lengths for a tree and update the total bit length
+ *     The length opt_len is updated; static_len is also updated if stree is
+ * Update the total bit length for the current block.
+ *     and corresponding code. The length opt_len is updated; static_len is
+ *     also updated if stree is not null. The field max_code is set.
+  /* Update opt_len to include the bit length tree and counts */
+        var geoGroup = geo.updateGeoGroup(n_verts);
+        var geoGroup = geo.updateGeoGroup(n_verts);
+        var geoGroup = geo.updateGeoGroup(vertices.length);
+        var geoGroup = geos[linewidth].updateGeoGroup(6);
+        var geoGroup = geos[linewidth].updateGeoGroup(6 * atom.bonds.length); //reserve enough space even for triple bonds
+        var geoGroup = geo.updateGeoGroup(1);
+        var geoGroup = geo.updateGeoGroup(4);
+        var geoGroup = geo.updateGeoGroup(4);
+                transformedRet.matrixAutoUpdate = false;
+        // and add back in to get updated bonds
+        //successive called up updateGeo will return a new geometry
+        var geoGroup = geo.updateGeoGroup(0);
+    static updateColor(geo, color) {
+        geo.colorsNeedUpdate = true;
+        var geoGroup = geo.updateGeoGroup(51);
+    // Update a bounding sphere's position and radius
+    static updateBoundingFromPoints(sphere, components, points, numPoints) {
+            GLShape.updateBoundingFromPoints(shape.boundingSphere, { centroid: center }, vertexArray, geoGroup.vertices);
+    static updateFromStyle(shape, stylespec) {
+        GLShape.updateFromStyle(this, this.stylespec);
+    /** Update shape with new style specification
+        sphere.updateStyle({color:'yellow',opacity:0.5});
+    updateStyle(newspec) {
+        GLShape.updateFromStyle(this, this.stylespec);
+        var geoGroup = this.geo.updateGeoGroup(0);
+        GLShape.updateBoundingFromPoints(this.boundingSphere, this.components, geoGroup.vertexArray, geoGroup.vertices);
+        var geoGroup = this.geo.updateGeoGroup(0);
+        GLShape.updateBoundingFromPoints(this.boundingSphere, this.components, geoGroup.vertexArray, geoGroup.vertices);
+        var geoGroup = this.geo.updateGeoGroup(0);
+        GLShape.updateBoundingFromPoints(this.boundingSphere, this.components, geoGroup.vertexArray, geoGroup.vertices);
+        var geoGroup = this.geo.updateGeoGroup(0);
+        GLShape.updateBoundingFromPoints(this.boundingSphere, this.components, geoGroup.vertexArray, geoGroup.vertices);
+        var geoGroup = this.geo.updateGeoGroup(2);
+        geoGroup = this.geo.updateGeoGroup(0);
+        GLShape.updateBoundingFromPoints(this.boundingSphere, this.components, geoGroup.vertexArray, geoGroup.vertices);
+        var geoGroup = this.geo.updateGeoGroup(0);
+        GLShape.updateBoundingFromPoints(this.boundingSphere, this.components, geoGroup.vertexArray, geoGroup.vertices);
+        this.updateStyle(volSpec);
+            GLShape.updateColor(this.geo, this.color);
+        this.camera.updateProjectionMatrix();
+    //also updates hoverables
+    updateClickables() {
+    updateSize() {
+        this.camera.updateProjectionMatrix();
+        this.updateSize();
+        this.updateSize();
+        this.updateSize();
+     *            [only_when_visable] - if true, will only update spin when canvas is visible
+    //does relative updates
+        else { //relative update
+     *      requested motion, overriding updates that happen during the animation         *
+        this.updateClickables(); //must render for clickable styles to take effect
+            //todo: have ability to only send delta updates
+                        geo.verticesNeedUpdate = true;
+                        geo.elementsNeedUpdate = true;
+                        geo.normalsNeedUpdate = true;
+                        geo.colorsNeedUpdate = true;
+                        geo.buffersNeedUpdate = true;
+                        surfArr[n].mat.needsUpdate = true;
+                                tmesh.matrixAutoUpdate = false;
+     *      requested motion, overriding updates that happen during the animation
+     *      requested motion, overriding updates that happen during the animation         *
+     *      requested motion, overriding updates that happen during the animation         *
+     *      requested motion, overriding updates that happen during the animation         *
+     *      requested motion, overriding updates that happen during the animation         *
+     * Must call render to update.
+        var geoGroup = geo.updateGeoGroup(0);
+                    surfArr[i].geo.colorsNeedUpdate = true;
+                    surfArr[i].geo.colorsNeedUpdate = true;
+        texture.needsUpdate = true;
+        texture.needsUpdate = true;
+        transfertexture.needsUpdate = true;
+        this.updateProjectionMatrix();
+        if (this.rotationAutoUpdate) {
+    updateProjectionMatrix() {
+        this.autoUpdateObjects = true;
+        this.autoUpdateScene = true;
+        this._lightsNeedUpdate = true;
+        var updateBuffers = false, wireframeBit = material.wireframe ? 1 : 0, geometryGroupHash = geometryGroup.id * 0xffffff + program.id * 2 + wireframeBit;
+            updateBuffers = true;
+        if (updateBuffers) {
+                if (updateBuffers) {
+                if (updateBuffers)
+                if (updateBuffers)
+        this._lightsNeedUpdate = true;
+        // update scene graph
+        if (this.autoUpdateScene)
+            scene.updateMatrixWorld();
+        // update camera matrices
+            camera.updateMatrixWorld();
+        // update WebGL objects
+        if (this.autoUpdateObjects)
+            // Force buffer update during render
+        // update must be called after objects adding / removal
+            this.updateObject(scene.__webglObjects[o].object);
+        if (texture.needsUpdate) {
+            texture.needsUpdate = false;
+            if (texture.onUpdate)
+                texture.onUpdate();
+        if (material.needsUpdate) {
+            material.needsUpdate = false;
+                if (this._lightsNeedUpdate) {
+                    this._lightsNeedUpdate = false;
+                            geometry.elementsNeedUpdate = true;
+                            geometry.normalsNeedUpdate = true;
+                        geometry.verticesNeedUpdate = true;
+                        geometry.colorsNeedUpdate = true;
+    updateObject(object) {
+                if (geometry.verticesNeedUpdate ||
+                    geometry.elementsNeedUpdate ||
+                    geometry.colorsNeedUpdate ||
+                    geometry.normalsNeedUpdate) {
+            geometry.verticesNeedUpdate = false;
+            geometry.elementsNeedUpdate = false;
+            geometry.normalsNeedUpdate = false;
+            geometry.colorsNeedUpdate = false;
+            geometry.buffersNeedUpdate = false;
+        this._lightsNeedUpdate = true;
+        // update positions and sort
+        this.verticesNeedUpdate = false;
+        this.elementsNeedUpdate = false;
+        this.normalsNeedUpdate = false;
+        this.colorsNeedUpdate = false;
+        this.buffersNeedUpdate = false;
+    updateGeoGroup(addVertices = 0) {
+        this.matrixAutoUpdate = true;
+        this.matrixWorldNeedsUpdate = true;
+        this.rotationAutoUpdate = true;
+        if (this.rotationAutoUpdate) {
+    updateMatrix() {
+        this.matrixWorldNeedsUpdate = true;
+    updateMatrixWorld(force) {
+        if (this.matrixAutoUpdate === true)
+            this.updateMatrix();
+        if (this.matrixWorldNeedsUpdate === true || force === true) {
+        this.matrixWorldNeedsUpdate = false;
+        //Update matrices of all children
+            this.children[i].updateMatrixWorld(true);
+        object.rotationAutoUpdate = this.rotationAutoUpdate;
+        object.matrixAutoUpdate = this.matrixAutoUpdate;
+        object.matrixWorldNeedsUpdate = this.matrixWorldNeedsUpdate;
+        this.matrixAutoUpdate = false;
+        this.needsUpdate = false;
+        this.onUpdate = null;
+        this.needsUpdate = true;
+        //TODO: update material and type to webgl
+    updateMatrix() {
+        this.matrixWorldNeedsUpdate = true;
+        var geoGroup = geo.updateGeoGroup(2);
+    let geoGroup = geo.updateGeoGroup();
+        geoGroup = geo.updateGeoGroup(2 * num); // ensure vertex capacity
+        geoGroup = geo.updateGeoGroup(8);
+    geoGroup = geo.updateGeoGroup(8);
+        //write out points, update geom,etc
+            str = lines.join("\n"); //update for str.search
+                        //update bond order

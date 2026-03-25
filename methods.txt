@@ -1,0 +1,726 @@
+    constructor(data = defaultByteLength, options = {}) {
+    available(byteLength = 1) {
+    isLittleEndian() {
+    setLittleEndian() {
+    isBigEndian() {
+    setBigEndian() {
+    skip(n = 1) {
+    back(n = 1) {
+    seek(offset) {
+    mark() {
+    reset() {
+    pushMark() {
+    popMark() {
+    rewind() {
+    ensureAvailable(byteLength = 1) {
+    readBoolean() {
+    readInt8() {
+    readUint8() {
+    readByte() {
+    readBytes(n = 1) {
+    readArray(size, type) {
+    readInt16() {
+    readUint16() {
+    readInt32() {
+    readUint32() {
+    readFloat32() {
+    readFloat64() {
+    readBigInt64() {
+    readBigUint64() {
+    readChar() {
+    readChars(n = 1) {
+    readUtf8(n = 1) {
+    decodeText(n = 1, encoding = 'utf8') {
+    writeBoolean(value) {
+    writeInt8(value) {
+    writeUint8(value) {
+    writeByte(value) {
+    writeBytes(bytes) {
+    writeInt16(value) {
+    writeUint16(value) {
+    writeInt32(value) {
+    writeUint32(value) {
+    writeFloat32(value) {
+    writeFloat64(value) {
+    writeBigInt64(value) {
+    writeBigUint64(value) {
+    writeChar(str) {
+    writeChars(str) {
+    writeUtf8(str) {
+    toArray() {
+    getWrittenByteLength() {
+    _updateLastWrittenByte() {
+    constructor(data) {
+    getAttribute(attributeName) {
+    getDataVariableAsString(variableName) {
+    getDataVariable(variableName) {
+    dataVariableExists(variableName) {
+    attributeExists(attributeName) {
+    padding(buffer);
+    put_short(s, s.bi_buf);
+    put_short(s, s.bi_buf);
+    put_short(s, s.bi_buf);
+    pqdownheap(s, tree, 1/*SMALLEST*/);
+    pqdownheap(s, tree, 1/*SMALLEST*/);
+    send_bits(s, s.bl_tree[bl_order[rank] * 2 + 1]/*.Len*/, 3);
+    tr_static_init();
+    build_tree(s, s.l_desc);
+    build_tree(s, s.d_desc);
+    send_bits(s, (STATIC_TREES << 1) + (last ? 1 : 0), 3);
+    compress_block(s, static_ltree, static_dtree);
+    send_bits(s, (DYN_TREES << 1) + (last ? 1 : 0), 3);
+    send_all_trees(s, s.l_desc.max_code + 1, s.d_desc.max_code + 1, max_blindex + 1);
+    compress_block(s, s.dyn_ltree, s.dyn_dtree);
+    bi_windup(s);
+    _tr_stored_block(s, 0, 0, last);
+    flush_pending(s.strm);
+    read_buf(s.strm, s.window, s.strstart, have);
+    _tr_stored_block(s, s.block_start, len, last);
+    flush_pending(s.strm);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    lm_init(strm.state);
+    flush_pending(strm);
+    putShortMSB(s, header);
+    flush_pending(strm);
+    put_byte(s, 31);
+    put_byte(s, 139);
+    put_byte(s, 8);
+    flush_pending(strm);
+    put_byte(s, strm.adler & 0xff);
+    put_byte(s, (strm.adler >> 8) & 0xff);
+    put_byte(s, (strm.adler >> 16) & 0xff);
+    put_byte(s, (strm.adler >> 24) & 0xff);
+    put_byte(s, strm.total_in & 0xff);
+    put_byte(s, (strm.total_in >> 8) & 0xff);
+    put_byte(s, (strm.total_in >> 16) & 0xff);
+    put_byte(s, (strm.total_in >> 24) & 0xff);
+    putShortMSB(s, strm.adler >>> 16);
+    putShortMSB(s, strm.adler & 0xffff);
+    fill_window(s);
+    inftrees(LENS,  state.lens, 0, 288, lenfix,   0, state.work, { bits: 9 });
+    inftrees(DISTS, state.lens, 0, 32,   distfix, 0, state.work, { bits: 5 });
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    flush_block_only(s, true);
+    flush_block_only(s, false);
+    lm_init(strm.state);
+    flush_pending(strm);
+    put_byte(s, strm.adler & 0xff);
+    put_byte(s, (strm.adler >> 8) & 0xff);
+    put_byte(s, (strm.adler >> 16) & 0xff);
+    put_byte(s, (strm.adler >> 24) & 0xff);
+    put_byte(s, strm.total_in & 0xff);
+    put_byte(s, (strm.total_in >> 8) & 0xff);
+    put_byte(s, (strm.total_in >> 16) & 0xff);
+    put_byte(s, (strm.total_in >> 24) & 0xff);
+    putShortMSB(s, strm.adler >>> 16);
+    putShortMSB(s, strm.adler & 0xffff);
+    fill_window(s);
+    inflate_table(LENS,  state.lens, 0, 288, lenfix,   0, state.work, { bits: 9 });
+    inflate_table(DISTS, state.lens, 0, 32,   distfix, 0, state.work, { bits: 5 });
+    put_short(s, s.bi_buf);
+    put_short(s, s.bi_buf);
+    put_short(s, s.bi_buf);
+    put_short(s, len);
+    put_short(s, ~len);
+    pqdownheap(s, tree, 1/*SMALLEST*/);
+    pqdownheap(s, tree, 1/*SMALLEST*/);
+    send_bits(s, s.bl_tree[bl_order[rank] * 2 + 1]/*.Len*/, 3);
+    tr_static_init();
+    build_tree(s, s.l_desc);
+    build_tree(s, s.d_desc);
+    _tr_stored_block(s, buf, stored_len, last);
+    send_bits(s, (STATIC_TREES << 1) + (last ? 1 : 0), 3);
+    compress_block(s, static_ltree, static_dtree);
+    send_bits(s, (DYN_TREES << 1) + (last ? 1 : 0), 3);
+    send_all_trees(s, s.l_desc.max_code + 1, s.d_desc.max_code + 1, max_blindex + 1);
+    compress_block(s, s.dyn_ltree, s.dyn_dtree);
+    bi_windup(s);
+    constructor(mid, options, viewer) {
+    getRadiusFromStyle(atom, style) {
+    drawAtomCross(atom, geos) {
+    getGoodCross(atom, atom2, p1, dir) {
+    getSideBondV(atom, atom2, i) {
+    addLine(vertexArray, colorArray, offset, p1, p2, c1) {
+    drawBondLines(atom, atoms, geos) {
+    drawAtomSphere(atom, geo) {
+    drawAtomClickSphere(atom) {
+    drawAtomInstanced(atom, geo) {
+    drawSphereImposter(geo, center, radius, C) {
+    drawAtomImposter(atom, geo) {
+    calculateDashes(from, to, radius, dashLength, gapLength, colors) {
+    calculateTwoColorSegments(from, to, colors) {
+    chooseDashedPlusV(atom, atom2, p1, p2, v) {
+    drawBondSticks(atom, atoms, geo) {
+    createMolObj(atoms, options) {
+    getViewer() {
+    getInternalState() {
+    setInternalState(state) {
+    getCrystData() {
+    setCrystData(a, b, c, alpha, beta, gamma) {
+    setCrystMatrix(matrix) {
+    getSymmetries() {
+    setSymmetries(list) {
+    getID() {
+    getNumFrames() {
+    adjustCoord(x1, x2, margin, adjust) {
+    adjustCoordinatesToBox() {
+    setFrame(framenum) {
+    addFrame(atoms) {
+    vibrate(numFrames = 10, amplitude = 1, bothWays = false, arrowSpec) {
+    setAtomDefaults(atoms) {
+    addMolData(data, format, options = {}) {
+    setDontDuplicateAtoms(dup) {
+    setModelData(mData) {
+    propertyMatches(atomval, val) {
+    atomIsSelected(atom, sel) {
+    expandAtomList(atomList, amt) {
+    selectedAtoms(sel, from) {
+    addAtoms(newatoms) {
+    assignBonds() {
+    removeAtoms(badatoms) {
+    setStyle(sel, style, add) {
+    setClickable(sel, clickable, callback) {
+    setHoverable(sel, hoverable, hover_callback, unhover_callback) {
+    enableContextMenu(sel, contextMenuEnabled) {
+    setColorByElement(sel, colors) {
+    setColorByProperty(sel, prop, scheme, range) {
+    setColorByFunction(sel, colorfun) {
+    toCDObject(includeStyles = false) {
+    globj(group, options) {
+    exportVRML() {
+    removegl(group) {
+    hide() {
+    show() {
+    addPropertyLabels(prop, sel, style) {
+    addResLabels(sel, style, byframe = false) {
+    setupDFS() {
+    setCoordinatesFromURL(url, path) {
+    setCoordinates(str, format) {
+    addAtomSpecs(customAtomSpecs) {
+    constructor(stylespec) {
+    updateStyle(newspec) {
+    addCustom(customSpec) {
+    addSphere(sphereSpec) {
+    addBox(boxSpec) {
+    addCylinder(cylinderSpec) {
+    addDashedCylinder(cylinderSpec) {
+    addCurve(curveSpec) {
+    addLine(lineSpec) {
+    addArrow(arrowSpec) {
+    addIsosurface(data, volSpec, callback, viewer) {
+    addVolumetricData(data, fmt, volSpec) {
+    finalize() {
+    globj(group) {
+    removegl(group) {
+    constructor(items) {
+    getSymmetries() {
+    setSymmetries(syms) {
+    getWidth() {
+    getHeight() {
+    setupRenderer() {
+    initializeScene() {
+    _handleLostContext(event) {
+    initContainer(element) {
+    decAnim() {
+    incAnim() {
+    nextSurfID() {
+    setSlabAndFog() {
+    show(nolink) {
+    updateClickables() {
+    handleClickSelection(mouseX, mouseY, event) {
+    canvasOffset() {
+    setHover(selected, event, intersects) {
+    handleHoverSelection(mouseX, mouseY, event) {
+    handleHoverContinue(mouseX, mouseY) {
+    closeEnoughForClick(event, { allowTolerance = event.targetTouches, tolerance = 5 } = {}) {
+    calcTouchDistance(ev) {
+    getX(ev) {
+    getY(ev) {
+    isInViewer(x, y) {
+    adjustZoomToLimits(z) {
+    constructor(element, c = {}) {
+    targetedObjects(x, y, objects) {
+    modelToScreen(coords) {
+    screenOffsetToModel(x, y, modelz) {
+    screenToModelDistance(screen, model) {
+    setViewChangeCallback(callback) {
+    setStateChangeCallback(callback) {
+    getConfig() {
+    setConfig(c) {
+    getInternalState() {
+    setInternalState(state) {
+    setZoomLimits(lower, upper) {
+    setCameraParameters(parameters) {
+    _handleMouseDown(ev) {
+    _handleMouseUp(ev) {
+    _handleMouseScroll(ev) {
+    pngURI() {
+    apngURI(nframes) {
+    getCanvas() {
+    getRenderer() {
+    setHoverDuration(duration) {
+    mouseXY(x, y) {
+    _handleMouseMove(ev) {
+    _handleContextMenu(ev) {
+    setContainer(element) {
+    setBackgroundColor(hex, a) {
+    setProjection(proj) {
+    setViewStyle(parameters) {
+    updateSize() {
+    setWidth(w) {
+    setHeight(h) {
+    resize() {
+    getModel(id) {
+    spin(axis, speed = 1, only_when_visable = false) {
+    animateMotion(duration, fixed, mpos, rz, rot, cam) {
+    rotate(angle, axis = "y", animationDuration = 0, fixedPath = false) {
+    surfacesFinished() {
+    getView() {
+    setView(arg, nolink) {
+    render(callback, exts) {
+    getModelList(sel) {
+    getAtomsFromSel(sel) {
+    atomIsSelected(atom, sel) {
+    selectedAtoms(sel) {
+    getUniqueValues(attribute, sel) {
+    pdbData(sel) {
+    zoom(factor = 2, animationDuration = 0, fixedPath = false) {
+    translate(x, y, animationDuration = 0, fixedPath = false) {
+    translateScene(x, y, animationDuration = 0, fixedPath = false) {
+    fitSlab(sel) {
+    center(sel = {}, animationDuration = 0, fixedPath = false) {
+    zoomTo(sel = {}, animationDuration = 0, fixedPath = false) {
+    setSlab(near, far) {
+    getSlab() {
+    addLabel(text, options = {}, sel, noshow = false) {
+    addResLabels(sel, style, byframe = false) {
+    addPropertyLabels(prop, sel, style) {
+    removeLabel(label) {
+    removeAllLabels() {
+    hideAllLabels() {
+    showAllLabels() {
+    setLabelStyle(label, stylespec) {
+    setLabelText(label, text) {
+    addShape(shapeSpec) {
+    removeShape(shape) {
+    removeAllShapes() {
+    getSelectionCenter(spec) {
+    addSphere(spec) {
+    addBox(spec = {}) {
+    addArrow(spec = {}) {
+    addCylinder(spec = {}) {
+    addCurve(spec = {}) {
+    addLine(spec = {}) {
+    addUnitCell(model, spec) {
+    removeUnitCell(model) {
+    replicateUnitCell(A = 3, B = A, C = B, model, addBonds, prune) {
+    addLineDashed(spec, s) {
+    triangle(viewer);
+    addCustom(spec) {
+    addVolumetricData(data, format, spec = {}) {
+    addIsosurface(data, spec = {}, callback) {
+    addVolumetricRender(data, spec) {
+    hasVolumetricRender() {
+    enableFog(fog) {
+    setFrame(framenum) {
+    getFrame() {
+    getNumFrames() {
+    getNextModelId() {
+    animate(options) {
+    stopAnimate() {
+    pauseAnimate() {
+    resumeAnimate() {
+    isAnimated() {
+    getModelOpt(options) {
+    addModel(data, format = "", options) {
+    addModels(data, format, options) {
+    addModelsAsFrames(data, format, options) {
+    addAsOneMolecule(data, format, options) {
+    removeModel(model) {
+    removeAllModels() {
+    exportJSON(includeStyles, modelID) {
+    exportVRML() {
+    createModelFrom(sel, extract = false) {
+    applyToModels(func, sel, value1, value2, value3, value4, value5) {
+    setStyle(sel, style) {
+    addStyle(sel, style) {
+    setClickable(sel, clickable, callback) {
+    setHoverable(sel, hoverable, hover_callback, unhover_callback) {
+    enableContextMenu(sel, contextMenuEnabled) {
+    vibrate(numFrames, amplitude, bothways, arrowSpec) {
+    setColorByProperty(sel, prop, scheme, range) {
+    setColorByElement(sel, colors) {
+    carveUpExtent(extent, atomlist, atomstoshow) {
+    addMesh(mesh) {
+    addSurface(stype, style = {}, atomsel = {}, allsel, focus, surfacecallback) {
+    setSurfaceMaterialStyle(surf, style) {
+    getSurface(surf) {
+    removeSurface(surf) {
+    removeAllSurfaces() {
+    jmolMoveTo() {
+    clear() {
+    mapAtomProperties(props, sel) {
+    linkViewer(otherviewer) {
+    getPerceivedDistance() {
+    setPerceivedDistance(dist) {
+    setAutoEyeSeparation(isright, x) {
+    setDefaultCartoonQuality(val) {
+    constructor(min, max, mid) {
+    range() {
+    valueToHex(val, range) {
+    constructor(min, max) {
+    valueToHex(val, range) {
+    range() {
+    constructor(min, max) {
+    valueToHex(val, range) {
+    range() {
+    constructor(min, max, colors) {
+    range() {
+    valueToHex(val, range) {
+    valueToHex(_value, _range) { return 0; }
+    range() { return null; }
+    constructor(text, parameters) {
+    getStyle() {
+    hide() {
+    show() {
+    setContext() {
+    dispose() {
+    constructor() {
+    march(data, verts, faces, spec) {
+    laplacianSmooth(numiter, verts, faces) {
+    constructor(length, width, height) {
+    set(x, y, z, pt) {
+    get(x, y, z) {
+    constructor() {
+    getVDWIndex(atom) {
+    getFacesAndVertices(atomlist) {
+    initparm(extent, btype, volume) {
+    boundingatom(btype) {
+    fillvoxels(atoms, atomlist) {
+    fillAtom(atom, atoms) {
+    fillvoxelswaals(atoms, atomlist) {
+    fillAtomWaals(atom, atoms) {
+    buildboundary() {
+    fastdistancemap() {
+    fastoneshell(inarray, boundPoint) {
+    marchingcubeinit(stype) {
+    marchingcube(stype) {
+    constructor(str, format, options) {
+    getIndex(x, y, z) {
+    getVal(x, y, z) {
+    cube(str) {
+    ccp4(bin) {
+    constructor(data, spec, viewer) {
+    globj(group) {
+    removegl(group) {
+    constructor(fov = 50, aspect = 1, near = 0.1, far = 2000, ortho = false) {
+    lookAt(vector) {
+    updateProjectionMatrix() {
+    constructor(hex, near = 1, far = 1000) {
+    clone() {
+    constructor(parameters) {
+    supportedExtensions() {
+    getContext() {
+    getCanvas() {
+    isLost() {
+    getPrecision() {
+    setClearColorHex(hex, alpha) {
+    enableOutline(parameters) {
+    disableOutline() {
+    enableAmbientOcclusion(parameters) {
+    disableAmbientOcclusion() {
+    setViewport() {
+    setSize(width, height) {
+    clear(color, depth, stencil) {
+    setMaterialFaces(material, reflected) {
+    setDepthTest(depthTest) {
+    setDepthWrite(depthWrite) {
+    setBlending(blending) {
+    initMaterial(material, lights, fog, objects) {
+    renderBuffer(camera, lights, fog, material, geometryGroup, object) {
+    clearShading() {
+    setShading(scene, camera, materialType) {
+    render(scene, camera) {
+    setFrameBuffer() {
+    initFrameBuffer() {
+    renderFrameBuffertoScreen() {
+    initWebGLObjects(scene) {
+    getYRatio() {
+    getXRatio() {
+    getAspect(width, height) {
+    setTexture(texture, slot, is3D) {
+    supportsVolumetric() {
+    enableAttribute(attribute) {
+    disableAttributes() {
+    setPolygonOffset(polygonOffset, offsetFactor, offsetUnits) {
+    setLineWidth(width) {
+    deallocateGeometry(geometry) {
+    deallocateMaterial(material) {
+    deallocateTexture(texture) {
+    onGeometryDispose(event) {
+    onTextureDispose(event) {
+    onMaterialDispose(event) {
+    getShader(type, str) {
+    buildProgram(fragmentShader, vertexShader, uniforms, parameters) {
+    setProgram(camera, lights, fog, material, object, renderer) {
+    loadMaterialUniforms(p_uniforms, m_uniforms) {
+    addObject(object, scene) {
+    updateObject(object) {
+    removeObject(object, scene) {
+    removeInstances(objList, object) {
+    removeInstancesDirect(objList, object) {
+    unrollBufferMaterial(globject) {
+    setBuffers(geometryGroup, hint) {
+    createMeshBuffers(geometryGroup) {
+    createLineBuffers(geometry) {
+    addBuffer(objlist, buffer, object) {
+    setupMatrices(object, camera) {
+    filterFallback(filter) {
+    setTextureParameters(textureType, texture) {
+    paramToGL(p) {
+    setupLights(program, lights) {
+    initGL() {
+    isWebGL1() {
+    setDefaultGLState() {
+    renderObjects(renderList, reverse, materialType, camera, lights, fog, useBlending) {
+    renderSprites(scene, camera, inFront) {
+    constructor() {
+    init(renderer) {
+    render(scene, camera, viewportWidth, viewportHeight, inFront) {
+    createProgram(shader, precision) {
+    constructor() {
+    dispatchEvent(event) {
+    removeEventListener(type, listener) {
+    addEventListener(type, listener) {
+    constructor(id = 0) {
+    setColor(color) {
+    setColors(setcolor) {
+    getNumVertices() {
+    getVertices() {
+    getCentroid() {
+    setNormals() {
+    setLineIndices() {
+    vrml(indent, material) {
+    truncateArrayBuffers(mesh = true, reallocatemem = false) {
+    constructor(mesh = false, radii = false, offset = false) {
+    updateGeoGroup(addVertices = 0) {
+    vrml(indent, material) {
+    addGeoGroup() {
+    setUpNormals(...args) {
+    setColors(...setcolor) {
+    setColor(...setcolor) {
+    setUpWireframe(...lineIndexArgs) {
+    initTypedArrays() {
+    dispose() {
+    constructor() {
+    lookAt(vector) {
+    add(object) {
+    remove(object) {
+    vrml(indent) {
+    updateMatrix() {
+    updateMatrixWorld(force) {
+    clone(object) {
+    setVisible(val) {
+    constructor() {
+    __addObject(object) {
+    __removeObject(object) {
+    constructor(hex, intensity = 1) {
+    projectVector(vector, camera) {
+    unprojectVector(vector, camera) {
+    constructor(origin, direction, far, near) {
+    set(origin, direction) {
+    setFromCamera(coords, camera) {
+    intersectObjects(group, objects) {
+    constructor(image, is3D) {
+    clone(texture = new Texture()) {
+    dispose() {
+    constructor(parameters) {
+    clone(material = new ImposterMaterial()) {
+    constructor(parameters) {
+    clone(material = new InstancedMaterial()) {
+    constructor(parameters) {
+    clone(material = new LineBasicMaterial()) {
+    constructor() {
+    setValues(values = {}) {
+    clone(material = new Material()) {
+    makeShaded(sTex) {
+    dispose() {
+    constructor(parameters) {
+    clone(material = new MeshDoubleLambertMaterial()) {
+    constructor(parameters) {
+    clone(material = new MeshLambertMaterial()) {
+    constructor(parameters) {
+    clone(material = new MeshOutlineMaterial()) {
+    constructor(parameters) {
+    clone(material = new SphereImposterMaterial()) {
+    constructor(parameters) {
+    clone(material = new SphereImposterOutlineMaterial()) {
+    constructor(parameters) {
+    clone(material = new SpriteMaterial()) {
+    constructor(parameters) {
+    clone(material = new StickImposterMaterial()) {
+    constructor(parameters = {}) {
+    clone(material = new StickImposterOutlineMaterial()) {
+    constructor(parameters) {
+    clone(material = new VolumetricMaterial()) {
+    constructor(x, y, z, w) {
+    set(x, y, z, w) {
+    copy(q) {
+    conjugate() {
+    inverse() {
+    length() {
+    lengthxyz() {
+    normalize() {
+    multiply(q) {
+    multiplyScalar(s) {
+    multiplyQuaternions(a, b) {
+    sub(q) {
+    clone() {
+    setFromEuler(e) {
+    constructor(x, y) {
+    set(x, y) {
+    subVectors(a, b) {
+    copy(v) {
+    clone() {
+    constructor(n11 = 1, n12 = 0, n13 = 0, n14 = 0, n21 = 0, n22 = 1, n23 = 0, n24 = 0, n31 = 0, n32 = 0, n33 = 1, n34 = 0, n41 = 0, n42 = 0, n43 = 0, n44 = 1) {
+    makeScale(x, y, z) {
+    set(n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, n41, n42, n43, n44) {
+    identity() {
+    copy(m) {
+    matrix3FromTopLeft() {
+    setRotationFromEuler(v, order) {
+    setRotationFromQuaternion(q) {
+    multiplyMatrices(a, b) {
+    multiplyScalar(s) {
+    makeTranslation(x, y, z) {
+    snap(digits) {
+    transpose() {
+    setPosition(v) {
+    translate(v) {
+    getInverse(m, throwOnInvertible) {
+    isReflected() {
+    scale(v) {
+    getMaxScaleOnAxis() {
+    makeFrustum(left, right, bottom, top, near, far) {
+    makePerspective(fov, aspect, near, far) {
+    makeOrthographic(left, right, top, bottom, near, far) {
+    isEqual(m) {
+    clone() {
+    isIdentity() {
+    isNearlyIdentity(digits) {
+    getScale(scale) {
+    lookAt(eye, target, up) {
+    compose(translation, rotation, scale) {
+    constructor(x, y, z) {
+    set(x, y, z) {
+    copy(v) {
+    add(v) {
+    addVectors(a, b) {
+    multiplyVectors(a, b) {
+    sub(v) {
+    subVectors(a, b) {
+    multiplyScalar(s) {
+    divideScalar(s) {
+    max(s) {
+    min(s) {
+    distanceTo(v) {
+    distanceToSquared(v) {
+    applyMatrix3(m) {
+    applyMatrix4(m) {
+    applyProjection(m) {
+    applyQuaternion(q) {
+    negate() {
+    dot(v) {
+    length() {
+    lengthSq() {
+    normalize() {
+    cross(v) {
+    crossVectors(a, b) {
+    equals(b) {
+    getPositionFromMatrix(m) {
+    setEulerFromRotationMatrix(m, order) {
+    rotateAboutVector(axis, ang) {
+    setFromMatrixPosition(m) {
+    transformDirection(m) {
+    clone() {
+    unproject(camera) {
+    constructor(n11 = 1, n12 = 0, n13 = 0, n21 = 0, n22 = 1, n23 = 0, n31 = 0, n32 = 0, n33 = 1) {
+    set(n11, n12, n13, n21, n22, n23, n31, n32, n33) {
+    identity() {
+    copy(m) {
+    multiplyScalar(s) {
+    getInverse3(matrix) {
+    getInverse(matrix, throwOnInvertible) {
+    getDeterminant() {
+    transpose() {
+    clone() {
+    getMatrix4() {
+    constructor(origin, direction) {
+    set(origin, direction) {
+    copy(ray) {
+    at(t, optionalTarget) {
+    recast(t) {
+    closestPointToPoint(point, optionalTarget) {
+    distanceToPoint(point) {
+    isIntersectionCylinder() { }
+    isIntersectionSphere(sphere) {
+    isIntersectionPlane(plane) {
+    distanceToPlane(plane) {
+    intersectPlane(plane, optionalTarget) {
+    applyMatrix4(matrix4) {
+    clone() {
+    constructor(geometry, material = new _materials__WEBPACK_IMPORTED_MODULE_0__.LineBasicMaterial({
+    clone(object = new Line(this.geometry, this.material, this.type)) {
+    constructor(geometry, material) {
+    clone(object) {
+    constructor(material = new _materials__WEBPACK_IMPORTED_MODULE_0__.SpriteMaterial()) {
+    updateMatrix() {
+    clone(object = new Sprite(this.material)) {
+    constructor(c1 = new _math__WEBPACK_IMPORTED_MODULE_0__.Vector3(), c2 = new _math__WEBPACK_IMPORTED_MODULE_0__.Vector3(), radius = 0) {
+    copy(cylinder) {
+    lengthSq() {
+    applyMatrix4(matrix) {
+    constructor(center = { x: 0, y: 0, z: 0 }, radius = 0) {
+    set(center, radius) {
+    copy(sphere) {
+    applyMatrix4(matrix) {
+    translate(offset) {
+    equals(sphere) {
+    clone() {
+    constructor(a = new _math__WEBPACK_IMPORTED_MODULE_0__.Vector3(), b = new _math__WEBPACK_IMPORTED_MODULE_0__.Vector3(), c = new _math__WEBPACK_IMPORTED_MODULE_0__.Vector3()) {
+    copy(triangle) {
+    applyMatrix4(matrix) {
+    getNormal() {
+    constructor(r, g, b) {
+    set(val) {
+    setHex(hex) {
+    getHex() {
+    clone() {
+    copy(color) {
+    scaled() {
+    flushGeom(false);
+    constructor(comp_bond) {
+    order(resn, atom1, atom2) {
+    constructor(struct_conn) {
+    constructor() {
+    add(a) {
+    geta([ch, resi, resn, aname]) {
+    setBonds(C, SC) {
+    constructor(fn, countdown, arg) {
+    cancel() {
+    pause() {
+    resume() {
